@@ -5004,6 +5004,7 @@
 			jsonGenerated = generateJSON()
 			// document.getElementById('tempJSONdisp').innerHTML = JSON.stringify(jsonGenerated)
 			console.log(jsonGenerated)
+			document.getElementById('secondRunB').scrollIntoView();
 
 			var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(jsonGenerated));
 			var dlAnchorElem = document.getElementById('downloadAnchorElem');
