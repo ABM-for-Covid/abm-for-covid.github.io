@@ -4360,14 +4360,22 @@
 					graphData[graphVS].pointData['knob@' + xloc + '@' + graphVS][0].setAttribute('rx','3%')
 					graphData[graphVS].pointData['knob@' + xloc + '@' + graphVS][0].setAttribute('ry', '3%');
 					transformedFactorV = vslideGs[graphVS][2][xloc]
-					updateText(graphVS, 'valueDisplayText@' + graphVS,  {x: xloc, y: linearValue(vslideGs[graphVS][8], vslideGs[graphVS][9] , 0, 100, vslideGs[graphVS][2][xloc]) + 17, text: 'Day ' + xloc + vslideGs[graphVS][3] + transformedFactorV + '.'})
+					textPlaceFactor = 17
+					if (linearValue(vslideGs[graphVS][8], vslideGs[graphVS][9] , 0, 100, vslideGs[graphVS][2][xloc]) > 50) {
+						textPlaceFactor = -17
+					}
+					updateText(graphVS, 'valueDisplayText@' + graphVS,  {x: xloc, y: linearValue(vslideGs[graphVS][8], vslideGs[graphVS][9] , 0, 100, vslideGs[graphVS][2][xloc]) + textPlaceFactor, text: 'Day ' + xloc + vslideGs[graphVS][3] + transformedFactorV + '.'})
 				}	
 			}
 			else {
 				graphData[graphVS].pointData['knob@' + vslideGs[graphVS][4] + '@' + graphVS][0].setAttribute('rx','3%')
 				graphData[graphVS].pointData['knob@' + vslideGs[graphVS][4] + '@' + graphVS][0].setAttribute('ry', '3%');
 				transformedFactorV = vslideGs[graphVS][2][vslideGs[graphVS][4]]
-				updateText(graphVS, 'valueDisplayText@' + graphVS,  {x: vslideGs[graphVS][4] , y: linearValue(vslideGs[graphVS][8], vslideGs[graphVS][9] , 0, 100,vslideGs[graphVS][2][vslideGs[graphVS][4]]) + 17, text: 'Day ' + vslideGs[graphVS][4]  + vslideGs[graphVS][3] + transformedFactorV + '.'})
+				textPlaceFactor = 17
+				if (linearValue(vslideGs[graphVS][8], vslideGs[graphVS][9] , 0, 100,vslideGs[graphVS][2][vslideGs[graphVS][4]]) > 50) {
+					textPlaceFactor = -17
+				}
+				updateText(graphVS, 'valueDisplayText@' + graphVS,  {x: vslideGs[graphVS][4] , y: linearValue(vslideGs[graphVS][8], vslideGs[graphVS][9] , 0, 100,vslideGs[graphVS][2][vslideGs[graphVS][4]]) + textPlaceFactor, text: 'Day ' + vslideGs[graphVS][4]  + vslideGs[graphVS][3] + transformedFactorV + '.'})
 			}
 
 		}
@@ -4415,6 +4423,14 @@
 			knobYv = linearValue(0, 100, vslideGs[graphVS][8], vslideGs[graphVS][9] , knobYv)
 			knobYv = parseInt(knobYv)
 
+			if (knobYv < vslideGs[graphVS][8]) {
+				knobYv = vslideGs[graphVS][8]
+			}
+
+			if (knobYv > vslideGs[graphVS][9]) {
+				knobYv = vslideGs[graphVS][9]
+			}
+
 			if (vslideGs[graphVS][5]) {
 				for (dayp = vslideGs[graphVS][4]; dayp <= timeMax; dayp++) {
 					vslideGs[graphVS][2][dayp] = knobYv
@@ -4430,10 +4446,8 @@
 
 		function knobVSMoveIf(knobYv, glink) {
 			graphVS = glink
-			if (knobYv >= -1 && knobYv < 101) {
-				if (linearValue(0, 100, vslideGs[graphVS][8], vslideGs[graphVS][9], knobYv) >= vslideGs[graphVS][8] && linearValue(0, 100, vslideGs[graphVS][8], vslideGs[graphVS][9], knobYv) <= vslideGs[graphVS][9]) {
+			if (knobYv >= -1 && knobYv < 101) {		
 					return true
-				}
 			}
 			else {
 				return false
