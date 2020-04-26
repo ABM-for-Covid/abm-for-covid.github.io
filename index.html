@@ -676,7 +676,7 @@
 								<div id="dynaParameterICUBedsTextBox" style="width: 20%; height: 33%; overflow: hidden;position: relative; z-index: 1;display: inline-block;">
 									<div id="dynaParameterICUBedsText" style="width: 100%; height: 100%; overflow: hidden;position: relative; z-index: 1;display: inline-flex; align-items: center; justify-content: flex-end; font-family: Source Sans Pro; font-size: 1vmax; text-align: right;">
 										<div>
-											Reinforcements : Additional ICU Beds
+											Additional ICU Beds
 										</div>
 									</div>
 								</div>
@@ -686,7 +686,7 @@
 								<div id="dynaParameterHBedsTextBox" style="width: 20%; height: 33%; overflow: hidden;position: relative; z-index: 1;display: inline-block;">
 									<div id="dynaParameterHBedsText" style="width: 100%; height: 100%; overflow: hidden;position: relative; z-index: 1;display: inline-flex; align-items: center; justify-content: flex-end; font-family: Source Sans Pro; font-size: 1vmax; text-align: right;">
 										<div>
-											Reinforcements : Additional Hospital Beds
+											Additional Hospital Beds
 										</div>
 									</div>
 								</div>
@@ -4887,21 +4887,25 @@
 
 		doDefaults()
 
+		function adjustInitP(event) {
+			console.log(event.target.id)
+		}
+
+		divSlider('parameter1SliderH', 'Slider', 0.00001, 0.001, 0.0001, 0.000001, 'adjustInitP(event)', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
+		divSlider('parameter2SliderH', 'Slider', 0.001, 2, 0.1, 0.0001, 'adjustInitP(event)', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
+		divSlider('parameter3SliderH', 'Slider', 0.005, 1, 0.05, 0.001, 'adjustInitP(event)', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
+		divSlider('parameter4SliderH', 'Slider', 0, 1, 0, 0.0001, 'adjustInitP(event)', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
+		divSlider('parameter5SliderH', 'Slider', 0, 120, 1, 0.01, 'adjustInitP(event)', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
+		divSlider('parameter6SliderH', 'Slider', 0, 120, 90, 0.01, 'adjustInitP(event)', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
+		divSlider('parameter7SliderH', 'Slider', 0, 120, 25, 0.01, 'adjustInitP(event)', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
+		divSlider('parameter8SliderH', 'Slider', 0, 1, 0.5, 0.001, 'adjustInitP(event)', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
+		divSlider('parameter9SliderH', 'Slider', 1, 10, 1, 0.01, 'adjustInitP(event)', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
+		divSlider('parameter10SliderH', 'Slider', 0, 1, 0.05, 0.001, 'adjustInitP(event)', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
+		divSlider('parameter11SliderH', 'Slider', 0, 1, 0.3, 0.001, 'adjustInitP(event)', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
+		divSlider('parameter12SliderH', 'Slider', 0, 100, 5, 0.01, 'adjustInitP(event)', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
+		divSlider('parameter13SliderH', 'Slider', 0, 1, 0.6, 0.001, 'adjustInitP(event)', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
 
 
-		divSlider('parameter1SliderH', 'Slider', 0.00001, 0.001, 0.0001, 0.000001, 'console.log("A")', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
-		divSlider('parameter2SliderH', 'Slider', 0.001, 2, 0.1, 0.0001, 'console.log("A")', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
-		divSlider('parameter3SliderH', 'Slider', 0.005, 1, 0.05, 0.001, 'console.log("A")', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
-		divSlider('parameter4SliderH', 'Slider', 0, 1, 0, 0.0001, 'console.log("A")', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
-		divSlider('parameter5SliderH', 'Slider', 0, 120, 1, 0.01, 'console.log("A")', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
-		divSlider('parameter6SliderH', 'Slider', 0, 120, 90, 0.01, 'console.log("A")', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
-		divSlider('parameter7SliderH', 'Slider', 0, 120, 25, 0.01, 'console.log("A")', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
-		divSlider('parameter8SliderH', 'Slider', 0, 1, 0.5, 0.001, 'console.log("A")', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
-		divSlider('parameter9SliderH', 'Slider', 1, 10, 1, 0.01, 'console.log("A")', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
-		divSlider('parameter10SliderH', 'Slider', 0, 1, 0.05, 0.001, 'console.log("A")', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
-		divSlider('parameter11SliderH', 'Slider', 0, 1, 0.3, 0.001, 'console.log("A")', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
-		divSlider('parameter12SliderH', 'Slider', 0, 100, 5, 0.01, 'console.log("A")', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
-		divSlider('parameter13SliderH', 'Slider', 0, 1, 0.6, 0.001, 'console.log("A")', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
 
 		
 		function moveParticles(ofBoundary) {
