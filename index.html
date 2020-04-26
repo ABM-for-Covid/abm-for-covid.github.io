@@ -554,7 +554,7 @@
 									</div>
 								</div>
 							</div>
-							<div id="dynaFullGraphH" style="width: 80%; height: 98%; overflow-y: scroll;position: absolute; z-index: 1;display: inline-block; font-family: Source Sans Pro; font-size: 1vmax;">
+							<div id="dynaFullGraphH" style="width: 80%; height: 93.5%; overflow-y: scroll;position: absolute; z-index: 1;display: inline-block; font-family: Source Sans Pro; font-size: 1vmax;">
 							</div>
 							<div id="dynaParameterTimeGraphH" style="width: 80%; height: 3%; overflow-y: scroll;position: relative; z-index: 1;display: inline-block;">
 
@@ -599,7 +599,7 @@
 								<div id="dynaParameterDailytestingTextBox" style="width: 20%; height: 10%; overflow: hidden;position: relative; z-index: 1;display: inline-block;">
 									<div id="dynaParameterDailytestingText" style="width: 100%; height: 100%; overflow: hidden;position: relative; z-index: 1;display: inline-flex; align-items: center; font-family: Source Sans Pro; font-size: 1vmax; text-align: left;">
 										<div>
-											Testing Capacity : Daily Testing<font style="color: grey; font-size: 0.9vmax"><br/>Every day testing happens for certain number of agent. Agents are chosen at random.</font>
+											Daily Testing<font style="color: grey; font-size: 0.9vmax"><br/>Every day testing happens for certain number of agent. Agents are chosen at random.</font>
 										</div>
 									</div>
 								</div>
@@ -706,7 +706,18 @@
 											<input type="checkbox" id="recovered_agents" onchange="graphCheck(event)" name="recovered_agents" value="0">&nbsp&nbsp<label for="recovered_agents_check" style="text-indent: 1%; color: hsla(280, 100%, 50%, 1); font-size: 1vmax;">Recovered Agents</label><br/>
 											<input type="checkbox" id="dead_agents" onchange="graphCheck(event)" name="dead_agents" value="0">&nbsp&nbsp<label for="dead_agents_check" style="text-indent: 1%; color: hsla(280, 0%, 50%, 1); font-size: 1vmax;">Dead Agents</label><br/>
 											<input type="checkbox" id="asympt_agents" onchange="graphCheck(event)" name="asympt_agents" value="0">&nbsp&nbsp<label for="asympt_agents_check" style="text-indent: 1%; color: hsla(230, 100%, 50%, 1); font-size: 1vmax;">Asymptomatic Agents</label><br/>
-											<input type="checkbox" id="suscept_agents" onchange="graphCheck(event)" name="suscept_agents" value="0">&nbsp&nbsp<label for="suscept_agents_check" style="text-indent: 1%; color: hsla(190, 100%, 50%, 1); font-size: 1vmax;">Susceptible Agents</label><br/><br/>
+											<input type="checkbox" id="suscept_agents" onchange="graphCheck(event)" name="suscept_agents" value="0">&nbsp&nbsp<label for="suscept_agents_check" style="text-indent: 1%; color: hsla(190, 100%, 50%, 1); font-size: 1vmax;">Susceptible Agents</label><br/>
+
+											<br/>
+
+											<input type="checkbox" id="lockdown_disp" onchange="pgraphCheck(event)" name="lockdown_disp" value="0">&nbsp&nbsp<label for="lockdown_disp_check" id="lockdown_disp_check" style="text-indent: 1%; color: hsla(190, 100%, 0%, 1); font-size: 1vmax;">Display Lockdowns</label><br/>
+											<input type="checkbox" id="quarantine_disp" onchange="pgraphCheck(event)" name="quarantine_disp" value="0">&nbsp&nbsp<label for="quarantine_disp_check" id = "quarantine_disp_check" style="text-indent: 1%; color: hsla(190, 100%, 0%, 1); font-size: 1vmax;">Display Quarantine Approaches</label><br/>
+											<input type="checkbox" id="social_distancing_disp" onchange="pgraphCheck(event)" name="social_distancing_disp" value="0">&nbsp&nbsp<label for="social_distancing_disp_check" id="social_distancing_disp_check" style="text-indent: 1%; color: hsla(190, 100%, 0%, 1); font-size: 1vmax;">Display Social Distancing</label><br/>
+											<input type="checkbox" id="daily_testing_disp" onchange="pgraphCheck(event)" name="daily_testing_disp" value="0">&nbsp&nbsp<label for="daily_testing_disp_check" id="daily_testing_disp_check" style="text-indent: 1%; color: hsla(190, 100%, 0%, 1); font-size: 1vmax;">Display Daily Testing</label><br/>
+											<input type="checkbox" id="age_based_lockdown_disp" onchange="pgraphCheck(event)" name="age_based_lockdown_disp" value="0">&nbsp&nbsp<label for="age_based_lockdown_disp_check" id="age_based_lockdown_disp_check" style="text-indent: 1%; color: hsla(190, 100%, 0%, 1); font-size: 1vmax;">Display Age Based Lockdowns</label><br/>
+											<input type="checkbox" id="contact_tracing_disp" onchange="pgraphCheck(event)" name="contact_tracing_disp" value="0">&nbsp&nbsp<label for="contact_tracing_disp_check" id="contact_tracing_disp_check" style="text-indent: 1%; color: hsla(190, 100%, 0%, 1); font-size: 1vmax;">Display Contact Tracing Approaches</label><br/>
+											<input type="checkbox" id="border_closing_disp" onchange="pgraphCheck(event)" name="border_closing_disp" value="0">&nbsp&nbsp<label for="border_closing_disp_check" id="border_closing_disp_check" style="text-indent: 1%; color: hsla(190, 100%, 0%, 1); font-size: 1vmax;">Display Border Closing Approaches</label><br/>
+											<input type="checkbox" id="hospitalization_disp" onchange="pgraphCheck(event)" name="hospitalization_disp" value="0">&nbsp&nbsp<label for="hospitalization_disp_check" id="hospitalization_disp_check" style="text-indent: 1%; color: hsla(190, 100%, 0%, 1); font-size: 1vmax;">Display Hospitalization Approaches</label><br/>
 											
 											
 										</div>
@@ -3029,6 +3040,12 @@
 			delete graphData[graphname].circleData[circlename]
 		}
 
+		function removeRectangle(graphname, rectname) {
+			rectElement = document.getElementById(graphname + '-rect-' + rectname)
+			rectElement.outerHTML = "";
+			delete graphData[graphname].rectData[rectname]
+		}
+
 		function removeText(graphname, textname) {
 			textElement = document.getElementById(graphname + '-text-' + textname)
 			textElement.outerHTML = "";
@@ -3891,15 +3908,34 @@
 		}
 
 		singleParameterGraphMap = {
-			'BorderCloseGraph': ['BorderCloseGraph', {}, 'Click to close borders between', 'Borders Closed between ', '190, 100%', 'none'], 
-			'HospitalizationGraph' : ['HospitalizationGraph', {}, 'Click to start Hospitalization between', 'Hospitalization is practised between ', '5, 100%', 'none'], 
-			'LockdownGraph' : ['LockdownGraph', {}, 'Click to start Lockdown between', 'Lockdown is practised between ', '220, 100%', 'none'],
-			'QuarantineGraph' : ['QuarantineGraph', {}, 'Click to start Quarantine Approach between', 'Quarantine Approach is practised between ', '40, 100%', 'none'],
-			'DailytestingGraph' : ['DailytestingGraph', {}, 'Click to start Daily Testing Approach between', 'Daily Testing Approach is practised between ', '320, 100%', 'TestingCapacityGraph'],
-			'ContactTracingGraph' : ['ContactTracingGraph', {}, 'Click to start Contact Tracing Approach between', 'Contact Tracing is practised between ', '130, 100%', 'none'],
-			'SocialDistancingGraph' : ['SocialDistancingGraph', {}, 'Click to start Social Distancing Approach between', 'Social Distancing is practised between ', '180, 100%', 'none'],
-			'AgeBasedLockDownGraph' : ['AgeBasedLockDownGraph', {}, 'Click to start Age based lockdown approach between', 'Age based lockdown is practised between ', '280, 100%', 'AgeThresholdGraph']
+			'BorderCloseGraph': ['BorderCloseGraph', {}, 'Click to close borders between', 'Borders Closed between ', '190, 100%', 'none', 'border_closing', {}], 
+			'HospitalizationGraph' : ['HospitalizationGraph', {}, 'Click to start Hospitalization between', 'Hospitalization is practised between ', '5, 100%', 'none', 'hospitalization', {}], 
+			'LockdownGraph' : ['LockdownGraph', {}, 'Click to start Lockdown between', 'Lockdown is practised between ', '220, 100%', 'none', 'lockdown', {}],
+			'QuarantineGraph' : ['QuarantineGraph', {}, 'Click to start Quarantine Approach between', 'Quarantine Approach is practised between ', '40, 100%', 'none', 'quarantine', {}],
+			'DailytestingGraph' : ['DailytestingGraph', {}, 'Click to start Daily Testing Approach between', 'Daily Testing Approach is practised between ', '320, 100%', 'TestingCapacityGraph', 'daily_testing', {}],
+			'ContactTracingGraph' : ['ContactTracingGraph', {}, 'Click to start Contact Tracing Approach between', 'Contact Tracing is practised between ', '130, 100%', 'none', 'contact_tracing', {}],
+			'SocialDistancingGraph' : ['SocialDistancingGraph', {}, 'Click to start Social Distancing Approach between', 'Social Distancing is practised between ', '180, 100%', 'none', 'social_distancing', {}],
+			'AgeBasedLockDownGraph' : ['AgeBasedLockDownGraph', {}, 'Click to start Age based lockdown approach between', 'Age based lockdown is practised between ', '280, 100%', 'AgeThresholdGraph', 'age_based_lockdown', {}]
 		}
+
+		singleParameterGraphMapRev = {
+			'border_closing': 'BorderCloseGraph',
+			'hospitalization': 'HospitalizationGraph',
+			'lockdown' : 'LockdownGraph',
+			'quarantine' : 'QuarantineGraph',
+			'daily_testing' : 'DailytestingGraph',
+			'contact_tracing': 'ContactTracingGraph',
+			'social_distancing': 'SocialDistancingGraph',
+			'age_based_lockdown': 'AgeBasedLockDownGraph'
+		}
+
+
+		for (policy in singleParameterGraphMap) {
+			policyG = singleParameterGraphMap[policy]
+			document.getElementById(policyG[6] + '_disp_check').style.color = 'hsla(' + policyG[4] +', 50%, 1)'
+		}
+			
+											
 
 		timeMax = 150
 
@@ -3979,6 +4015,9 @@
 			}
 			moveX = parseInt(moveX)
 			calculateDayWise(graphNR)
+
+			updateRectangle('dynaFullGraph', 'displayBackRect@' + knobName + '@' + graphNR, {x: singleParameterGraphMap[graphNR][1][knobName][0], y: 200, w: singleParameterGraphMap[graphNR][1][knobName][1] - singleParameterGraphMap[graphNR][1][knobName][0], h: 300})
+			
 			if (singleParameterGraphMap[graphNR][5] != 'none') {
 				drawAllLinesAndPointsVS(singleParameterGraphMap[graphNR][5])
 			}
@@ -4093,6 +4132,17 @@
 
 					singleParameterGraphMap[graphReferred][1][pUid] = [moveToLoc ,moveConditions[1]]
 
+
+					addRectangle('dynaFullGraph', 'displayBackRect@' + pUid + '@' + graphReferred, {x: moveToLoc, y: 200, w: moveConditions[1] - moveToLoc, h: 300, rectcolor: 'hsla(' + singleParameterGraphMap[graphReferred][4] +', 50%, 0.05)', strokewidth:0, stroke: 'none'})
+
+					if (document.getElementById(singleParameterGraphMap[graphReferred][6] + '_disp').checked == false) {
+						updateRectangle('dynaFullGraph', 'displayBackRect@' + pUid + '@' + graphReferred, {rectcolor: 'hsla(' + singleParameterGraphMap[graphReferred][4] +', 50%, 0)'})
+					}
+
+					singleParameterGraphMap[graphReferred][7]['displayBackRect@' + pUid + '@' + graphReferred] = true
+
+
+
 					for (dayval = moveToLoc; dayval <= moveConditions[1]; dayval++) {
 						dayWiseGData[graphReferred][dayval] = 1
 					}
@@ -4109,7 +4159,7 @@
 			}
 		}
 
-		function removeBorderClosePoint(event) {
+		function removeDynaPPoint(event) {
 			graphReferred = singleParameterGraphMap[event.target.id.split('-')[0]][0]
 			cursorloc = {x: event.clientX, y: event.clientY}
 			if (event.clientX == undefined) {
@@ -4127,10 +4177,14 @@
 						drawAllLinesAndPointsVS(singleParameterGraphMap[graphReferred][5])
 					}
 
+					delete singleParameterGraphMap[graphReferred][7]['displayBackRect@' + ptspacekey + '@' + graphReferred]
+
 					delete singleParameterGraphMap[graphReferred][1][ptspacekey]
 					removeLine(graphReferred, 'sliderFill@' + ptspacekey + '@' + graphReferred)
 					removePoint(graphReferred, 'sliderthumbleft@' + ptspacekey + '@' + graphReferred)
 					removePoint(graphReferred, 'sliderthumbright@' + ptspacekey + '@' + graphReferred)
+					removeRectangle('dynaFullGraph', 'displayBackRect@' + ptspacekey + '@' + graphReferred)
+
 				}
 			}
 
@@ -4201,12 +4255,13 @@
 
 				addedTXT = addText(singleParameterGraphs[gph][0], 'remove@' + singleParameterGraphs[gph][0], {x: -100, y: 0, text: '', textAlign: 'center', fontSize: "1.3vmax", textcolor: 'hsla(2, 0%, 0%, 1)'})[0]
 				addedTXT.style.fontWeight = 'bold'
-				addedTXT.addEventListener('click', removeBorderClosePoint)
+				addedTXT.addEventListener('click', removeDynaPPoint)
 
 				dayWiseGData[singleParameterGraphs[gph][0]] = {}
 				for (dayval = 0; dayval <= timeMax; dayval++) {
 					dayWiseGData[singleParameterGraphs[gph][0]][dayval] = 0
 				}
+
 			}
 				
 
@@ -4557,7 +4612,8 @@
 			graphoptions.scrollZoom = 'no'
 			graphoptions.draggability = 'no'
 			
-			addGraph(graphH, 'dynaFullGraph', graphoptions)
+			addedG = addGraph(graphH, 'dynaFullGraph', graphoptions)
+			addedG.svgElement.style.zIndex = -10
 
 			addLine('dynaFullGraph', 'showline',  {x1: -100, y1: 0, x2: -200, y2: 100, linecolor: 'hsla(0, 0%, 10%, 0.7)', strokedasharray: [5, 5]})
 
@@ -4696,7 +4752,7 @@
 				
 			}
 
-			addedRect = addRectangle('plotG', 'plotCoverRect',  {x: -100, y: -100, w: 2, h: 2, rectcolor: 'hsla(0, 0%, 100%, 0.8)', strokewidth: 0, stroke: 'none'})[0]
+			addedRect = addRectangle('plotG', 'plotCoverRect',  {x: -100, y: -100, w: 2, h: 2, rectcolor: 'hsla(0, 0%, 100%, 0)', strokewidth: 0, stroke: 'none'})[0]
 			addedRect.style.pointerEvents = 'none'
 
 			addedText = addText('plotG', 'plotDayText',  {x: -100, y: -200, textcolor: 'hsla(0, 0%, 0%, 0.4)', text: '', fontSize: '0.7vmax'})[0]
@@ -4726,6 +4782,25 @@
 				updatePathPoints('plotG', event.target.id + '@path', [[-100, 0], [-100, 1]])
 			}
 		}
+
+		function pgraphCheck(event) {
+			if (document.getElementById(event.target.id).checked) {
+				rectGName = singleParameterGraphMapRev[event.target.id.split('_disp')[0]]
+				for (var dispRectName in singleParameterGraphMap[rectGName][7]) {
+					updateRectangle('dynaFullGraph', dispRectName, {rectcolor: 'hsla(' + singleParameterGraphMap[rectGName][4] +', 50%, 0.05)'})
+				}
+			}
+			else {
+				rectGName = singleParameterGraphMapRev[event.target.id.split('_disp')[0]]
+				for (var dispRectName in singleParameterGraphMap[rectGName][7]) {
+					updateRectangle('dynaFullGraph', dispRectName, {rectcolor: 'hsla(' + singleParameterGraphMap[rectGName][4] +', 50%, 0)'})
+				}
+			}
+			
+			
+		}
+
+
 
 		for (defCase in plotData) {
 			if (defCase == 'infected_agents' || defCase == 'asympt_agents' || defCase == 'recovered_agents') {
