@@ -379,7 +379,7 @@
 									<div style="width: 100%; height: 100%; font-family: Source Sans Pro; font-size: 1.3vmax; display:flex; align-items: center;">EXPERIMENT</div>
 								</div>
 								<div id="VSii1" style="width: 69%; height: 100%; overflow: hidden;position: relative; z-index: 1;display: inline-block;"></div>
-								<div id="runName" style="width: 6%; height: 100%; overflow: hidden;position: relative; z-index: 1;display: inline-block; ">
+								<div id="runName" onclick="handleRun(event)" style="width: 6%; height: 100%; overflow: hidden;position: relative; z-index: 1;display: inline-block; ">
 									<div style="width: 100%; height: 90%; background: hsla(195, 100%, 50%, 1); border-radius: 10px; display: flex; align-items: center; justify-content: center; cursor: pointer;">
 										<div id="RunB" style="width: 100%; height: 100%; font-family: Source Sans Pro; font-size: 1vmax; color: white; font-weight: bold; display:flex; align-items: center; justify-content: center;">RUN</div>
 									</div>
@@ -399,16 +399,25 @@
 							<div id="gradfillinitParameters" style='margin:0px;width:100%; height: 67%; display: inline-block; position: absolute; pointer-events: none; background: linear-gradient(to bottom,hsla(0, 0%, 0%, 0), hsla(0, 100%, 100%, 0) 0%, hsla(0, 100%, 100%, 1) 0%, hsla(0, 100%, 100%, 0) 7%, hsla(0, 0%, 100%, 0) 90%,hsla(0, 100%, 100%, 1) 100%,hsla(0, 100%, 100%, 0) 100%,hsla(0, 100%, 100%, 0)); z-index: 2;'></div>
 							<div id="initParameterHolder" style="width: 100%; height: 67%; overflow: auto; position: relative; z-index: 1;display: inline-block;">
 								<div id="HSii1" style="width: 100%; height: 5%; overflow: hidden;position: relative; z-index: 1;display: inline-block;"></div>
-								<div id="parameterBox1" style="margin:0px;width:40%;position: relative; z-index: 1;display: inline-block;">
+								<div id="parameterBox0" style="margin:0px;width:30%;position: relative; z-index: 1;display: inline-block;">
+									<div id="parameterBoxInner0" style="margin:0px;width:100%;position: relative; z-index: 1;display: flex; font-size: 1vmax; font-family: Source Sans Pro;">
+										<div id="parameter0Text" style="margin:0px;width:43%; position: relative; z-index: 1; display: inline-block; text-align: left; ">Number of Agents  &nbsp<font id="parameter0Value" style="font-weight:bold; color:hsla(195, 100%, 50% , 1);">1000</font><br/><font style="color:hsla(0, 0%, 60%, 1); font-size: 0.8vmax;">Number of agents in the simulation</font>
+										</div>
+										<div id="parameter0SliderSpacer" style="margin:0px;width:2%; position: relative;"></div>
+										<div id="parameter0SliderH" style="margin:0px;width:55%; position: relative; z-index: 1; display: flex; align-items: center;"></div>
+									</div>
+								</div>
+								<div id="parameterSpacer0" style="width: 3%; overflow: hidden;position: relative; z-index: 1;display: inline-block;"></div>
+								<div id="parameterBox1" style="margin:0px;width:30%;position: relative; z-index: 1;display: inline-block;">
 									<div id="parameterBoxInner1" style="margin:0px;width:100%;position: relative; z-index: 1;display: flex; font-size: 1vmax; font-family: Source Sans Pro;">
-										<div id="parameter1Text" style="margin:0px;width:43%; position: relative; z-index: 1; display: inline-block; text-align: left; ">Agent Density &nbsp<font id="parameter1Value" style="font-weight:bold; color:hsla(195, 100%, 50% , 1);">0.1</font><br/><font style="color:hsla(0, 0%, 60%, 1); font-size: 0.8vmax;">How many agent per sq of pixel in our simulation</font>
+										<div id="parameter1Text" style="margin:0px;width:43%; position: relative; z-index: 1; display: inline-block; text-align: left; ">Agent Density &nbsp<font id="parameter1Value" style="font-weight:bold; color:hsla(195, 100%, 50% , 1);">0.0001</font><br/><font style="color:hsla(0, 0%, 60%, 1); font-size: 0.8vmax;">How many agent per sq of pixel in our simulation</font>
 										</div>
 										<div id="parameter1SliderSpacer" style="margin:0px;width:2%; position: relative;"></div>
 										<div id="parameter1SliderH" style="margin:0px;width:55%; position: relative; z-index: 1; display: flex; align-items: center;"></div>
 									</div>
 								</div>
-								<div id="parameterSpacer1" style="width: 10%; overflow: hidden;position: relative; z-index: 1;display: inline-block;"></div>
-								<div id="parameterBox2" style="margin:0px;width:40%;position: relative; z-index: 1;display: inline-block;">
+								<div id="parameterSpacer1" style="width: 3%; overflow: hidden;position: relative; z-index: 1;display: inline-block;"></div>
+								<div id="parameterBox2" style="margin:0px;width:30%;position: relative; z-index: 1;display: inline-block;">
 									<div id="parameterBoxInner2" style="margin:0px;width:100%; position: relative; z-index: 1;display: flex; font-size: 1vmax; font-family: Source Sans Pro;">
 										<div id="parameter2Text" style="margin:0px;width:41%; position: relative; z-index: 1; display: inline-block; text-align: left;">Hospital bed per agent &nbsp<font id="parameter2Value" style="font-weight:bold; color:hsla(195, 100%, 50% , 1);">0.1</font><br/><font style="color:hsla(0, 0%, 60%, 1); font-size: 0.8vmax;">Set the factor at which hospitals are available in the env/agent</font>
 										</div>
@@ -416,11 +425,11 @@
 										<div id="parameter2SliderH" style="margin:0px;width:55%; position: relative; z-index: 1; display: flex; align-items: center;"></div>
 									</div>
 								</div>
-								<div id="parameterSpacer2" style="width: 10%; overflow: hidden;position: relative; z-index: 1;display: inline-block;"></div>
+								<div id="parameterSpacer2" style="width: 3%; overflow: hidden;position: relative; z-index: 1;display: inline-block;"></div>
 								<div id="HSii2" style="width: 100%; height: 10%; overflow: hidden;position: relative; z-index: 1;display: inline-block;"></div>
 								<div id="parameterBox3" style="margin:0px;width:40%;position: relative; z-index: 1;display: inline-block;">
 									<div id="parameterBoxInner3" style="margin:0px;width:100%;position: relative; z-index: 1;display: flex; font-size: 1vmax; font-family: Source Sans Pro;">
-										<div id="parameter3Text" style="margin:0px;width:43%; position: relative; z-index: 1; display: inline-block; text-align: left; ">ICU bed per hospital bed &nbsp<font id="parameter3Value" style="font-weight:bold; color:hsla(195, 100%, 50% , 1);">0.1</font><br/><font style="color:hsla(0, 0%, 60%, 1); font-size: 0.8vmax;">How many ICU beds are available per hospital bed. </font>
+										<div id="parameter3Text" style="margin:0px;width:43%; position: relative; z-index: 1; display: inline-block; text-align: left; ">ICU bed per hospital bed &nbsp<font id="parameter3Value" style="font-weight:bold; color:hsla(195, 100%, 50% , 1);">0.05</font><br/><font style="color:hsla(0, 0%, 60%, 1); font-size: 0.8vmax;">How many ICU beds are available per hospital bed. </font>
 										</div>
 										<div id="parameter3SliderSpacer" style="margin:0px;width:2%; position: relative;"></div>
 										<div id="parameter3SliderH" style="margin:0px;width:55%; position: relative; z-index: 1; display: flex; align-items: center;"></div>
@@ -429,7 +438,7 @@
 								<div id="parameterSpacer3" style="width: 10%; overflow: hidden;position: relative; z-index: 1;display: inline-block;"></div>
 								<div id="parameterBox4" style="margin:0px;width:40%;position: relative; z-index: 1;display: inline-block;">
 									<div id="parameterBoxInner4" style="margin:0px;width:100%; position: relative; z-index: 1;display: flex; font-size: 1vmax; font-family: Source Sans Pro;">
-										<div id="parameter4Text" style="margin:0px;width:41%; position: relative; z-index: 1; display: inline-block; text-align: left;">Infection percent &nbsp<font id="parameter4Value" style="font-weight:bold; color:hsla(195, 100%, 50% , 1);">0.1</font><br/><font style="color:hsla(0, 0%, 60%, 1); font-size: 0.8vmax;">% of agents are infectious at the start of simulation</font>
+										<div id="parameter4Text" style="margin:0px;width:41%; position: relative; z-index: 1; display: inline-block; text-align: left;">Infection percent &nbsp<font id="parameter4Value" style="font-weight:bold; color:hsla(195, 100%, 50% , 1);">0.0</font><br/><font style="color:hsla(0, 0%, 60%, 1); font-size: 0.8vmax;">% of agents are infectious at the start of simulation</font>
 										</div>
 										<div id="parameter4SliderSpacer" style="margin:0px;width:4%; position: relative;"></div>
 										<div id="parameter4SliderH" style="margin:0px;width:55%; position: relative; z-index: 1; display: flex; align-items: center;"></div>
@@ -445,7 +454,7 @@
 								</div>
 								<div id="parameterBox5" style="margin:0px;width:24%;position: relative; z-index: 1;display: inline-block;">
 									<div id="parameterBoxInner5" style="margin:0px;width:100%; position: relative; z-index: 1;display: flex; font-size: 1vmax; font-family: Source Sans Pro;">
-										<div id="parameter5Text" style="margin:0px;width:41%; position: relative; z-index: 1; display: inline-block; text-align: left;">Distribution age minimum &nbsp<font id="parameter5Value" style="font-weight:bold; color:hsla(195, 100%, 50% , 1);">0.1</font><br/><font style="color:hsla(0, 0%, 60%, 1); font-size: 0.8vmax;"></font>
+										<div id="parameter5Text" style="margin:0px;width:41%; position: relative; z-index: 1; display: inline-block; text-align: left;">Distribution age minimum &nbsp<font id="parameter5Value" style="font-weight:bold; color:hsla(195, 100%, 50% , 1);">1</font><br/><font style="color:hsla(0, 0%, 60%, 1); font-size: 0.8vmax;"></font>
 										</div>
 										<div id="parameter5SliderSpacer" style="margin:0px;width:4%; position: relative;"></div>
 										<div id="parameter5SliderH" style="margin:0px;width:55%; position: relative; z-index: 1; display: flex; align-items: center;"></div>
@@ -454,7 +463,7 @@
 								<div id="parameterSpacer5" style="width: 3%; overflow: hidden;position: relative; z-index: 1;display: inline-block;"></div>
 								<div id="parameterBox6" style="margin:0px;width:24%;position: relative; z-index: 1;display: inline-block;">
 									<div id="parameterBoxInner6" style="margin:0px;width:100%; position: relative; z-index: 1;display: flex; font-size: 1vmax; font-family: Source Sans Pro;">
-										<div id="parameter6Text" style="margin:0px;width:41%; position: relative; z-index: 1; display: inline-block; text-align: left;">Distribution age maximum &nbsp <font id="parameter6Value" style="font-weight:bold; color:hsla(195, 100%, 50% , 1);">0.1</font><br/><font style="color:hsla(0, 0%, 60%, 1); font-size: 0.8vmax;"></font>
+										<div id="parameter6Text" style="margin:0px;width:41%; position: relative; z-index: 1; display: inline-block; text-align: left;">Distribution age maximum &nbsp <font id="parameter6Value" style="font-weight:bold; color:hsla(195, 100%, 50% , 1);">90</font><br/><font style="color:hsla(0, 0%, 60%, 1); font-size: 0.8vmax;"></font>
 										</div>
 										<div id="parameter6SliderSpacer" style="margin:0px;width:4%; position: relative;"></div>
 										<div id="parameter6SliderH" style="margin:0px;width:55%; position: relative; z-index: 1; display: flex; align-items: center;"></div>
@@ -463,7 +472,7 @@
 								<div id="parameterSpacer6" style="width: 3%; overflow: hidden;position: relative; z-index: 1;display: inline-block;"></div>
 								<div id="parameterBox7" style="margin:0px;width:24%;position: relative; z-index: 1;display: inline-block;">
 									<div id="parameterBoxInner7" style="margin:0px;width:100%; position: relative; z-index: 1;display: flex; font-size: 1vmax; font-family: Source Sans Pro;">
-										<div id="parameter7Text" style="margin:0px;width:41%; position: relative; z-index: 1; display: inline-block; text-align: left;">Distribution age peak &nbsp<font id="parameter7Value" style="font-weight:bold; color:hsla(195, 100%, 50% , 1);">0.1</font><br/><font style="color:hsla(0, 0%, 60%, 1); font-size: 0.8vmax;"></font>
+										<div id="parameter7Text" style="margin:0px;width:41%; position: relative; z-index: 1; display: inline-block; text-align: left;">Distribution age peak &nbsp<font id="parameter7Value" style="font-weight:bold; color:hsla(195, 100%, 50% , 1);">25</font><br/><font style="color:hsla(0, 0%, 60%, 1); font-size: 0.8vmax;"></font>
 										</div>
 										<div id="parameter7SliderSpacer" style="margin:0px;width:4%; position: relative;"></div>
 										<div id="parameter7SliderH" style="margin:0px;width:55%; position: relative; z-index: 1; display: flex; align-items: center;"></div>
@@ -479,7 +488,7 @@
 								</div>
 								<div id="parameterBox8" style="margin:0px;width:36%;position: relative; z-index: 1;display: inline-block;">
 									<div id="parameterBoxInner8" style="margin:0px;width:100%; position: relative; z-index: 1;display: flex; font-size: 1vmax; font-family: Source Sans Pro;">
-										<div id="parameter8Text" style="margin:0px;width:41%; position: relative; z-index: 1; display: inline-block; text-align: left;">Distribution Hygiene mean &nbsp<font id="parameter8Value" style="font-weight:bold; color:hsla(195, 100%, 50% , 1);">0.1</font><br/><font style="color:hsla(0, 0%, 60%, 1); font-size: 0.8vmax;"></font>
+										<div id="parameter8Text" style="margin:0px;width:41%; position: relative; z-index: 1; display: inline-block; text-align: left;">Distribution Hygiene mean &nbsp<font id="parameter8Value" style="font-weight:bold; color:hsla(195, 100%, 50% , 1);">0.5</font><br/><font style="color:hsla(0, 0%, 60%, 1); font-size: 0.8vmax;"></font>
 										</div>
 										<div id="parameter8SliderSpacer" style="margin:0px;width:4%; position: relative;"></div>
 										<div id="parameter8SliderH" style="margin:0px;width:55%; position: relative; z-index: 1; display: flex; align-items: center;"></div>
@@ -488,7 +497,7 @@
 								<div id="parameterSpacer8" style="width: 6%; overflow: hidden;position: relative; z-index: 1;display: inline-block;"></div>
 								<div id="parameterBox9" style="margin:0px;width:36%;position: relative; z-index: 1;display: inline-block;">
 									<div id="parameterBoxInner9" style="margin:0px;width:100%; position: relative; z-index: 1;display: flex; font-size: 1vmax; font-family: Source Sans Pro;">
-										<div id="parameter9Text" style="margin:0px;width:41%; position: relative; z-index: 1; display: inline-block; text-align: left;">Distribution Hygiene Var &nbsp<font id="parameter9Value" style="font-weight:bold; color:hsla(195, 100%, 50% , 1);">0.1</font><br/><font style="color:hsla(0, 0%, 60%, 1); font-size: 0.8vmax;"></font>
+										<div id="parameter9Text" style="margin:0px;width:41%; position: relative; z-index: 1; display: inline-block; text-align: left;">Distribution Hygiene Var &nbsp<font id="parameter9Value" style="font-weight:bold; color:hsla(195, 100%, 50% , 1);">1</font><br/><font style="color:hsla(0, 0%, 60%, 1); font-size: 0.8vmax;"></font>
 										</div>
 										<div id="parameter9SliderSpacer" style="margin:0px;width:4%; position: relative;"></div>
 										<div id="parameter9SliderH" style="margin:0px;width:55%; position: relative; z-index: 1; display: flex; align-items: center;"></div>
@@ -498,7 +507,7 @@
 								<div id="HSii5" style="width: 100%; height: 10%; overflow: hidden;position: relative; z-index: 1;display: inline-block;"></div>
 								<div id="parameterBox10" style="margin:0px;width:40%;position: relative; z-index: 1;display: inline-block;">
 									<div id="parameterBoxInner10" style="margin:0px;width:100%; position: relative; z-index: 1;display: flex; font-size: 1vmax; font-family: Source Sans Pro;">
-										<div id="parameter10Text" style="margin:0px;width:41%; position: relative; z-index: 1; display: inline-block; text-align: left;">Essential Agent percent &nbsp<font id="parameter10Value" style="font-weight:bold; color:hsla(195, 100%, 50% , 1);">0.1</font><br/><font style="color:hsla(0, 0%, 60%, 1); font-size: 0.8vmax;">What % of agents are essentials? ( They will be mobile under the lockdown)</font>
+										<div id="parameter10Text" style="margin:0px;width:41%; position: relative; z-index: 1; display: inline-block; text-align: left;">Essential Agent percent &nbsp<font id="parameter10Value" style="font-weight:bold; color:hsla(195, 100%, 50% , 1);">0.05</font><br/><font style="color:hsla(0, 0%, 60%, 1); font-size: 0.8vmax;">What % of agents are essentials? ( They will be mobile under the lockdown)</font>
 										</div>
 										<div id="parameter10SliderSpacer" style="margin:0px;width:4%; position: relative;"></div>
 										<div id="parameter10SliderH" style="margin:0px;width:55%; position: relative; z-index: 1; display: flex; align-items: center;"></div>
@@ -533,6 +542,16 @@
 									</div>
 								</div>
 								<div id="parameterSpacer13" style="width: 10%; overflow: hidden;position: relative; z-index: 1;display: inline-block;"></div>
+								<div id="HSii7" style="width: 100%; height: 10%; overflow: hidden;position: relative; z-index: 1;display: inline-block;"></div>
+								<div id="parameterBox14" style="margin:0px;width:40%;position: relative; z-index: 1;display: inline-block;">
+									<div id="parameterBoxInner14" style="margin:0px;width:100%; position: relative; z-index: 1;display: flex; font-size: 1vmax; font-family: Source Sans Pro;">
+										<div id="parameter14Text" style="margin:0px;width:41%; position: relative; z-index: 1; display: inline-block; text-align: left;">Recovered Agent percent &nbsp<font id="parameter14Value" style="font-weight:bold; color:hsla(195, 100%, 50% , 1);">0</font><font style="color:hsla(0, 0%, 60%, 1); font-size: 0.8vmax;"><br/>These agents would be recovered already with the start of the simulation. </font>
+										</div>
+										<div id="parameter14SliderSpacer" style="margin:0px;width:4%; position: relative;"></div>
+										<div id="parameter14SliderH" style="margin:0px;width:55%; position: relative; z-index: 1; display: flex; align-items: center;"></div>
+									</div>
+								</div>
+								<div id="parameterSpacer14" style="width: 10%; overflow: hidden;position: relative; z-index: 1;display: inline-block;"></div>
 								<div id="HSiiLast" style="width: 100%; height: 15%; overflow: hidden;position: relative; z-index: 1;display: inline-block;"></div>
 							</div>
 						</div>
@@ -557,7 +576,6 @@
 							<div id="dynaFullGraphH" style="width: 80%; height: 89%; overflow-y: scroll;position: absolute; z-index: 100;display: inline-block; font-family: Source Sans Pro; font-size: 1vmax; pointer-events: none;">
 							</div>
 							<div id="dynaParameterTimeGraphH" style="width: 80%; height: 3%; overflow-y: scroll;position: relative; z-index: 1;display: inline-block;">
-
 							</div><br/>
 							<div id="gradfillinitParameters" style='margin:0px;width:100%; height: 42%; display: inline-block; position: absolute; pointer-events: none; background: linear-gradient(to bottom,hsla(0, 0%, 0%, 0), hsla(0, 100%, 100%, 0) 0%, hsla(0, 100%, 100%, 1) 0%, hsla(0, 100%, 100%, 0) 7%, hsla(0, 0%, 100%, 0) 90%,hsla(0, 100%, 100%, 1) 100%,hsla(0, 100%, 100%, 0) 100%,hsla(0, 100%, 100%, 0)); z-index: 2;'></div>
 
@@ -732,7 +750,7 @@
 								</div>
 								<div id="runName2" style="width: 6%; height: 100%; overflow: hidden;position: relative; z-index: 1;display: inline-block; ">
 									<div style="width: 100%; height: 60%; background: hsla(195, 100%, 50%, 1); border-radius: 10px; display: flex; align-items: center; justify-content: center; cursor: pointer;">
-										<div id="secondRunB" style="width: 100%; height: 100%; font-family: Source Sans Pro; font-size: 1vmax; color: white; font-weight: bold; display:flex; align-items: center; justify-content: center;">RUN</div>
+										<div id="secondRunB" onclick="handleRun(event)"  style="width: 100%; height: 100%; font-family: Source Sans Pro; font-size: 1vmax; color: white; font-weight: bold; display:flex; align-items: center; justify-content: center;">RUN</div>
 									</div>
 								</div>
 							</div>
@@ -743,7 +761,9 @@
 				</div>
 				<div id="VS4" style="width: 2%; height: 100%; overflow: hidden;position: relative; z-index: 1;display: inline-block;"></div>
 			</div>
-			<div id="BottomBar" style="width: 100%; height: 6%; overflow: hidden;position: relative; z-index: 1;display: inline-block;"></div>
+			<div id="BottomBar" style="width: 100%; height: 6%; overflow: hidden;position: relative; z-index: 1;display: inline-block;">
+				<a id="downloadAnchorElem" style="display:none"></a>
+			</div>
 		</div>
 		<script type="text/javascript">
 
@@ -3918,14 +3938,14 @@
 		}
 
 		singleParameterGraphMap = {
-			'BorderCloseGraph': ['BorderCloseGraph', {}, 'Click to close borders between', 'Borders Closed between ', '190, 100%', 'none', 'border_closing', {}], 
-			'HospitalizationGraph' : ['HospitalizationGraph', {}, 'Click to start Hospitalization between', 'Hospitalization is practised between ', '5, 100%', 'none', 'hospitalization', {}], 
-			'LockdownGraph' : ['LockdownGraph', {}, 'Click to start Lockdown between', 'Lockdown is practised between ', '220, 100%', 'none', 'lockdown', {}],
-			'QuarantineGraph' : ['QuarantineGraph', {}, 'Click to start Quarantine Approach between', 'Quarantine Approach is practised between ', '40, 100%', 'none', 'quarantine', {}],
-			'DailytestingGraph' : ['DailytestingGraph', {}, 'Click to start Daily Testing Approach between', 'Daily Testing Approach is practised between ', '320, 100%', 'TestingCapacityGraph', 'daily_testing', {}],
-			'ContactTracingGraph' : ['ContactTracingGraph', {}, 'Click to start Contact Tracing Approach between', 'Contact Tracing is practised between ', '130, 100%', 'none', 'contact_tracing', {}],
-			'SocialDistancingGraph' : ['SocialDistancingGraph', {}, 'Click to start Social Distancing Approach between', 'Social Distancing is practised between ', '180, 100%', 'none', 'social_distancing', {}],
-			'AgeBasedLockDownGraph' : ['AgeBasedLockDownGraph', {}, 'Click to start Age based lockdown approach between', 'Age based lockdown is practised between ', '280, 100%', 'AgeThresholdGraph', 'age_based_lockdown', {}]
+			'BorderCloseGraph': ['BorderCloseGraph', {}, 'Click to close borders between', 'Borders Closed between ', '190, 100%', 'none', 'border_closing', {}, 'p_close_borders'], 
+			'HospitalizationGraph' : ['HospitalizationGraph', {}, 'Click to start Hospitalization between', 'Hospitalization is practised between ', '5, 100%', 'none', 'hospitalization', {}, 'p_hospitalization'], 
+			'LockdownGraph' : ['LockdownGraph', {}, 'Click to start Lockdown between', 'Lockdown is practised between ', '220, 100%', 'none', 'lockdown', {}, 'p_lockdown'],
+			'QuarantineGraph' : ['QuarantineGraph', {}, 'Click to start Quarantine Approach between', 'Quarantine Approach is practised between ', '40, 100%', 'none', 'quarantine', {}, 'p_quarantine'],
+			'DailytestingGraph' : ['DailytestingGraph', {}, 'Click to start Daily Testing Approach between', 'Daily Testing Approach is practised between ', '320, 100%', 'TestingCapacityGraph', 'daily_testing', {}, 'p_daily_testing'],
+			'ContactTracingGraph' : ['ContactTracingGraph', {}, 'Click to start Contact Tracing Approach between', 'Contact Tracing is practised between ', '130, 100%', 'none', 'contact_tracing', {}, 'p_contact_tracing'],
+			'SocialDistancingGraph' : ['SocialDistancingGraph', {}, 'Click to start Social Distancing Approach between', 'Social Distancing is practised between ', '180, 100%', 'none', 'social_distancing', {}, 'p_social_distancing'],
+			'AgeBasedLockDownGraph' : ['AgeBasedLockDownGraph', {}, 'Click to start Age based lockdown approach between', 'Age based lockdown is practised between ', '280, 100%', 'AgeThresholdGraph', 'age_based_lockdown', {}, 'p_age_lockdown']
 		}
 
 		singleParameterGraphMapRev = {
@@ -4295,7 +4315,8 @@
 			60,
 			5,
 			100,
-			'280, 100%'], 
+			'280, 100%',
+			'a_lockdown_threshhold'], 
 			'TestingCapacityGraph': ['dynaParameterTestingCapacityH', 
 			'none', 
 			{}, 
@@ -4306,7 +4327,8 @@
 			5,
 			0,
 			100,
-			'320, 100%'],
+			'320, 100%',
+			'c_testing'],
 			'ICUBedsGraph': ['dynaParameterICUBedsH', 
 			'none', 
 			{}, 
@@ -4317,7 +4339,8 @@
 			0,
 			0,
 			500,
-			'2, 100%'],
+			'2, 100%',
+			'c_icu_beds'],
 			'HBedsGraph': ['dynaParameterHBedsH', 
 			'none', 
 			{}, 
@@ -4328,7 +4351,8 @@
 			0,
 			0,
 			500,
-			'2, 100%']
+			'2, 100%',
+			'c_hospital_bed']
 		}
 
 
@@ -4896,22 +4920,98 @@
 		doDefaults()
 
 		function adjustInitP(event) {
-			console.log(event.target.id)
+			document.getElementById('parameter' + initPLink[event.target.id][0] + 'Value').innerHTML = event.target.value
 		}
 
-		divSlider('parameter1SliderH', 'Slider', 0.00001, 0.001, 0.0001, 0.000001, 'adjustInitP(event)', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
-		divSlider('parameter2SliderH', 'Slider', 0.001, 2, 0.1, 0.0001, 'adjustInitP(event)', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
-		divSlider('parameter3SliderH', 'Slider', 0.005, 1, 0.05, 0.001, 'adjustInitP(event)', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
-		divSlider('parameter4SliderH', 'Slider', 0, 1, 0, 0.0001, 'adjustInitP(event)', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
-		divSlider('parameter5SliderH', 'Slider', 0, 120, 1, 0.01, 'adjustInitP(event)', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
-		divSlider('parameter6SliderH', 'Slider', 0, 120, 90, 0.01, 'adjustInitP(event)', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
-		divSlider('parameter7SliderH', 'Slider', 0, 120, 25, 0.01, 'adjustInitP(event)', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
-		divSlider('parameter8SliderH', 'Slider', 0, 1, 0.5, 0.001, 'adjustInitP(event)', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
-		divSlider('parameter9SliderH', 'Slider', 1, 10, 1, 0.01, 'adjustInitP(event)', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
-		divSlider('parameter10SliderH', 'Slider', 0, 1, 0.05, 0.001, 'adjustInitP(event)', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
-		divSlider('parameter11SliderH', 'Slider', 0, 1, 0.3, 0.001, 'adjustInitP(event)', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
-		divSlider('parameter12SliderH', 'Slider', 0, 100, 5, 0.01, 'adjustInitP(event)', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
-		divSlider('parameter13SliderH', 'Slider', 0, 1, 0.6, 0.001, 'adjustInitP(event)', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
+		initPLink = {'Number_of_Agents': [0, "num_agents"], 'Agent_Density': [1, "agent_density"], 'Hospital_bed_per_agent':[2, "hospital_bed_per_agent"], 'ICU_bed_per_hospital_bed':[3, "icu_bed_per_hospital_bed"], 'Infection_percent':[4, "infection_percent"], 'Distribution_age_minimum':[5, "distribution_age_min"], 'Distribution_age_maximum': [6, "distribution_age_max"], 'Distribution_age_peak': [7, "distribution_age_peak"], 'Distribution_Hygiene_mean': [8, "distribution_hygiene_mean"], 'Distribution_Hygiene_Var': [9, "distribution_hygiene_var"], 'Essential_Agent_percent': [10, "essential_agent_percent"], 'Testing_Efficiency': [11, "a_false_negative_percent"], 'Contact_Tracing_Capacity': [12, "c_contact_trace"], 'Social_Distancing_Efficiency': [13, "a_social_distancing_efficiency"], 'Recovered_Agent_percent': [14, "recovery_percent"]}
+
+		divSlider('parameter0SliderH', 'Number_of_Agents', 10, 10000, 1000, 1, 'adjustInitP(event)', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
+		divSlider('parameter1SliderH', 'Agent_Density', 0.00001, 0.001, 0.0001, 0.000001, 'adjustInitP(event)', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
+		divSlider('parameter2SliderH', 'Hospital_bed_per_agent', 0.001, 2, 0.1, 0.0001, 'adjustInitP(event)', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
+		divSlider('parameter3SliderH', 'ICU_bed_per_hospital_bed', 0.005, 1, 0.05, 0.001, 'adjustInitP(event)', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
+		divSlider('parameter4SliderH', 'Infection_percent', 0, 1, 0, 0.0001, 'adjustInitP(event)', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
+		divSlider('parameter5SliderH', 'Distribution_age_minimum', 0, 120, 1, 0.01, 'adjustInitP(event)', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
+		divSlider('parameter6SliderH', 'Distribution_age_maximum', 0, 120, 90, 0.01, 'adjustInitP(event)', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
+		divSlider('parameter7SliderH', 'Distribution_age_peak', 0, 120, 25, 0.01, 'adjustInitP(event)', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
+		divSlider('parameter8SliderH', 'Distribution_Hygiene_mean', 0, 1, 0.5, 0.001, 'adjustInitP(event)', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
+		divSlider('parameter9SliderH', 'Distribution_Hygiene_Var', 1, 10, 1, 0.01, 'adjustInitP(event)', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
+		divSlider('parameter10SliderH', 'Essential_Agent_percent', 0, 1, 0.05, 0.001, 'adjustInitP(event)', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
+		divSlider('parameter11SliderH', 'Testing_Efficiency', 0, 1, 0.3, 0.001, 'adjustInitP(event)', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
+		divSlider('parameter12SliderH', 'Contact_Tracing_Capacity', 0, 100, 5, 0.01, 'adjustInitP(event)', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
+		divSlider('parameter13SliderH', 'Social_Distancing_Efficiency', 0, 1, 0.6, 0.001, 'adjustInitP(event)', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
+		divSlider('parameter14SliderH', 'Recovered_Agent_percent', 0, 1, 0, 0.001, 'adjustInitP(event)', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
+
+		variablesRequested = ['']
+
+		function generateJSON() {
+			jsonFile = {}
+			for (var initP in initPLink) {
+				jsonFile[initPLink[initP][1].toString()] = document.getElementById(initP).value
+			}
+
+			dayTasks = {}
+
+			for (var sPG in singleParameterGraphMap) {
+				if (Object.keys(singleParameterGraphMap[sPG][1]).length > 0) {
+					for (var sitVar in singleParameterGraphMap[sPG][1]) {
+						if (dayTasks[singleParameterGraphMap[sPG][1][sitVar][0]] == undefined) {
+							dayTasks[singleParameterGraphMap[sPG][1][sitVar][0]] = {}
+							dayTasks[singleParameterGraphMap[sPG][1][sitVar][0]][singleParameterGraphMap[sPG][8]] = 1
+						}
+						else {
+							dayTasks[singleParameterGraphMap[sPG][1][sitVar][0]][singleParameterGraphMap[sPG][8]] = 1
+						}
+
+						if (dayTasks[singleParameterGraphMap[sPG][1][sitVar][1]] == undefined) {
+							dayTasks[singleParameterGraphMap[sPG][1][sitVar][1]] = {}
+							dayTasks[singleParameterGraphMap[sPG][1][sitVar][1]][singleParameterGraphMap[sPG][8]] = 0
+						}
+						else {
+							dayTasks[singleParameterGraphMap[sPG][1][sitVar][1]][singleParameterGraphMap[sPG][8]]= 0
+						}
+					}
+					
+				}
+				
+			}
+
+			for (graphVS in vslideGs) {
+				prevV = 'none'
+				for (var dayp in vslideGs[graphVS][2]) {
+					if (prevV != vslideGs[graphVS][2][dayp]) {
+						if (dayTasks[dayp] == undefined) {
+							dayTasks[dayp] = {}
+							dayTasks[dayp][vslideGs[graphVS][11]] = vslideGs[graphVS][2][dayp]
+						}
+						else {
+							dayTasks[dayp][vslideGs[graphVS][11]] = vslideGs[graphVS][2][dayp]
+						}
+						
+						prevV = vslideGs[graphVS][2][dayp]
+					}
+				}
+			}
+
+			dayTasks[timeMax] = {"p_exit": 1}
+
+			jsonFile["strategy"] = dayTasks
+			
+			return jsonFile
+		}
+
+
+		function handleRun(event) {
+			jsonGenerated = generateJSON()
+			// document.getElementById('tempJSONdisp').innerHTML = JSON.stringify(jsonGenerated)
+			console.log(jsonGenerated)
+
+			var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(jsonGenerated));
+			var dlAnchorElem = document.getElementById('downloadAnchorElem');
+			dlAnchorElem.setAttribute("href", dataStr);
+			dlAnchorElem.setAttribute("download", "experiment.json");
+			dlAnchorElem.click();
+		}
+
 
 
 
