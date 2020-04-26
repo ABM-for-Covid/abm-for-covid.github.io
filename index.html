@@ -4492,7 +4492,7 @@
 
 				addText(graphVS, 'valueDisplayText@' + graphVS,  {x: -100, y: 0, text: '', textAlign: 'center', fontSize: "0.37vmax", textcolor: 'hsla(0, 0%, 0%, 1)'})[0]
 
-				addedText = addText(graphVS, 'dragAllPointsTillEnd@' + graphVS,  {x: 50, y: -20, text: 'Click here to turn off dragging all points till the end', textAlign: 'center', fontSize: "0.37vmax", textcolor: 'hsla(' + vslideGs[graphVS][10] + ', 50%, 1)'})[0]
+				addedText = addText(graphVS, 'dragAllPointsTillEnd@' + graphVS,  {x: timeMax/2, y: -20, text: 'Click here to turn off dragging all points till the end', textAlign: 'center', fontSize: "0.37vmax", textcolor: 'hsla(' + vslideGs[graphVS][10] + ', 50%, 1)'})[0]
 				addedText.style.fontWeight = 'bold'
 				addedText.style.cursor = 'pointer'
 				addedText.addEventListener('click', toggleDraggingVS)
@@ -4842,6 +4842,33 @@
 			addDynaPPointSpecific([52, 148], 'DailytestingGraph')
 
 			addDynaPPointSpecific([90, 144], 'AgeBasedLockDownGraph')
+
+			for (dayp = 63; dayp <= 90; dayp++) {
+				vslideGs['TestingCapacityGraph'][2][dayp] = 40
+			}
+			for (dayp = 90; dayp <= timeMax; dayp++) {
+				vslideGs['TestingCapacityGraph'][2][dayp] = 70
+			}
+			drawAllLinesAndPointsVS('TestingCapacityGraph')
+
+			for (dayp = 95; dayp <= 120; dayp++) {
+				vslideGs['AgeThresholdGraph'][2][dayp] = 50
+			}
+			for (dayp = 120; dayp <= timeMax; dayp++) {
+				vslideGs['AgeThresholdGraph'][2][dayp] = 55
+			}
+			drawAllLinesAndPointsVS('AgeThresholdGraph')
+
+			vslideGs['ICUBedsGraph'][2][30] = 120
+			vslideGs['ICUBedsGraph'][2][60] = 450
+			vslideGs['ICUBedsGraph'][2][100] = 180
+			vslideGs['ICUBedsGraph'][2][120] = 45
+			drawAllLinesAndPointsVS('ICUBedsGraph')
+
+			vslideGs['HBedsGraph'][2][20] = 120
+			vslideGs['HBedsGraph'][2][80] = 338
+			vslideGs['HBedsGraph'][2][144] = 223
+			drawAllLinesAndPointsVS('HBedsGraph')
 		}
 
 		doDefaults()
