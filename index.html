@@ -762,6 +762,7 @@
 				<div id="VS4" style="width: 2%; height: 100%; overflow: hidden;position: relative; z-index: 1;display: inline-block;"></div>
 			</div>
 			<div id="BottomBar" style="width: 100%; height: 6%; overflow: hidden;position: relative; z-index: 1;display: inline-block;">
+				<input id="fileinputBack" accept=".csv" onchange="handleOpen(event)" type="file">
 				<a id="downloadAnchorElem" style="display:none"></a>
 			</div>
 		</div>
@@ -4690,9 +4691,9 @@
 		plotMax = 1000
 
 
-		plotDataParameters = {infected_agents: {color: '2, 100%', name: 'Infected Agents'},  exposed_agents:{color: '320, 100%', name: 'Exposed Agents'}, recovered_agents:{color: '280, 100%', name: 'Recovered Agents'}, dead_agents:{color: '280, 0%', name: 'Dead Agents'}, asympt_agents:{color: '230, 100%', name: 'Asymptomatic Agents'}, suscept_agents:{color: '190, 100%', name: 'Susceptible Agents'}}
+		plotDataParameters = {"infected_agents": {color: '2, 100%', name: 'Infected Agents'},  "exposed_agents":{color: '320, 100%', name: 'Exposed Agents'}, "recovered_agents":{color: '280, 100%', name: 'Recovered Agents'}, "dead_agents":{color: '280, 0%', name: 'Dead Agents'}, "asympt_agents":{color: '230, 100%', name: 'Asymptomatic Agents'}, "suscept_agents":{color: '190, 100%', name: 'Susceptible Agents'}}
 
-		plotData = {infected_agents: [],  exposed_agents:[], recovered_agents:[], dead_agents:[], asympt_agents:[], suscept_agents:[]}
+		plotData = {"infected_agents": [],  "exposed_agents":[], "recovered_agents":[], "dead_agents":[], "asympt_agents":[], "suscept_agents":[]}
 
 		function generateDummy() {
 			for (dayV = 0; dayV <= timeMax; dayV++) {
@@ -5012,6 +5013,52 @@
 			dlAnchorElem.setAttribute("download", "experiment.json");
 			dlAnchorElem.click();
 		}
+
+		function handleOpen(e) {
+			var file = e.target.files[0];
+			var reader = new FileReader();
+			reader.readAsText(file);
+			dayWiseCSV = {}
+
+			colnames = ['day', 'infected_agents', 'exposed_agents', 'recovered_agents', 'dead_agents', 'asympt_agents', 'suscept_agents']
+
+			reader.onload = function (event) {
+				var csvData = event.target.result;
+				csvData = csvData.replace(/ /g, '')
+				rows = csvData.split('\n')
+				for (rownum = 0; rownum < rows.length; rownum++) {
+					if (rownum == 0) {
+						for (colnum = 0; colnum < colnames.length; colnum++) {
+							if (colnames[colnum] != 'day') {
+								dayWiseCSV[colnames[colnum].toString().split(' ')[0]] = []
+							}		
+						}
+					}
+					else {
+						colVal = rows[rownum].split(',')
+						for (colnum = 1; colnum < colVal.length; colnum++) {
+							nameSTR = colnames[colnum].toString().split(' ')[0]
+							dayWiseCSV[nameSTR].push([parseInt(colVal[0]),parseInt(colVal[colnum])])
+						}
+					}
+				}
+				connectToPlotData(dayWiseCSV)
+			}
+			
+		}
+
+
+
+		function connectToPlotData(readData) {
+			for (var curveD in plotData) {
+				plotData[curveD] = readData[curveD]
+				if (document.getElementById(curveD).checked) {
+					updatePlot(curveD)
+				}
+			}
+		}
+
+
 
 
 
