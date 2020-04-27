@@ -318,13 +318,14 @@
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/6.6.1/math.min.js"></script> -->
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
 		
 		<script type="application/ld+json">
 			{
 			  "@type": "Simulation",
 			  "name": "ABM For Covid",
-			  "author": "Shrisha Rao, Ashuthosh Trivedi, Gunjan, Nanda Kishore, Prajwal DSouza",
+			  "author": "Shrisha Rao, Ashuthosh Trivedi, Nanda Kishore, Prajwal DSouza",
 			  "description": "Simulation and Results of Agent Based Model for Covid19."
 			  }
 		</script>
@@ -401,7 +402,7 @@
 								<div id="HSii1" style="width: 100%; height: 5%; overflow: hidden;position: relative; z-index: 1;display: inline-block;"></div>
 								<div id="parameterBox0" style="margin:0px;width:30%;position: relative; z-index: 1;display: inline-block;">
 									<div id="parameterBoxInner0" style="margin:0px;width:100%;position: relative; z-index: 1;display: flex; font-size: 1vmax; font-family: Source Sans Pro;">
-										<div id="parameter0Text" style="margin:0px;width:43%; position: relative; z-index: 1; display: inline-block; text-align: left; ">Number of Agents  &nbsp<font id="parameter0Value" style="font-weight:bold; color:hsla(195, 100%, 50% , 1);">1000</font><br/><font style="color:hsla(0, 0%, 60%, 1); font-size: 0.8vmax;">Number of agents in the simulation</font>
+										<div id="parameter0Text" style="margin:0px;width:43%; position: relative; z-index: 1; display: inline-block; text-align: left; ">Number of Agents  &nbsp<font id="parameter0Value" style="font-weight:bold; color:hsla(195, 100%, 50% , 1);">200</font><br/><font style="color:hsla(0, 0%, 60%, 1); font-size: 0.8vmax;">Number of agents in the simulation</font>
 										</div>
 										<div id="parameter0SliderSpacer" style="margin:0px;width:2%; position: relative;"></div>
 										<div id="parameter0SliderH" style="margin:0px;width:55%; position: relative; z-index: 1; display: flex; align-items: center;"></div>
@@ -4688,7 +4689,8 @@
 
 		setUpOverlayGraph()
 
-		plotMax = 1000
+		//todo ashu - change to 100
+		plotMax = 100
 
 
 		plotDataParameters = {"infected_agents": {color: '2, 100%', name: 'Infected Agents'},  "exposed_agents":{color: '320, 100%', name: 'Exposed Agents'}, "recovered_agents":{color: '280, 100%', name: 'Recovered Agents'}, "dead_agents":{color: '280, 0%', name: 'Dead Agents'}, "asympt_agents":{color: '230, 100%', name: 'Asymptomatic Agents'}, "suscept_agents":{color: '190, 100%', name: 'Susceptible Agents'}}
@@ -4926,21 +4928,21 @@
 
 		initPLink = {'Number_of_Agents': [0, "num_agents"], 'Agent_Density': [1, "agent_density"], 'Hospital_bed_per_agent':[2, "hospital_bed_per_agent"], 'ICU_bed_per_hospital_bed':[3, "icu_bed_per_hospital_bed"], 'Infection_percent':[4, "infection_percent"], 'Distribution_age_minimum':[5, "distribution_age_min"], 'Distribution_age_maximum': [6, "distribution_age_max"], 'Distribution_age_peak': [7, "distribution_age_peak"], 'Distribution_Hygiene_mean': [8, "distribution_hygiene_mean"], 'Distribution_Hygiene_Var': [9, "distribution_hygiene_var"], 'Essential_Agent_percent': [10, "essential_agent_percent"], 'Testing_Efficiency': [11, "a_false_negative_percent"], 'Contact_Tracing_Capacity': [12, "c_contact_trace"], 'Social_Distancing_Efficiency': [13, "a_social_distancing_efficiency"], 'Recovered_Agent_percent': [14, "recovery_percent"]}
 
-		divSlider('parameter0SliderH', 'Number_of_Agents', 10, 10000, 1000, 1, 'adjustInitP(event)', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
+		divSlider('parameter0SliderH', 'Number_of_Agents', 10, 10000, 100, 1, 'adjustInitP(event)', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
 		divSlider('parameter1SliderH', 'Agent_Density', 0.00001, 0.001, 0.0001, 0.000001, 'adjustInitP(event)', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
-		divSlider('parameter2SliderH', 'Hospital_bed_per_agent', 0.001, 2, 0.1, 0.0001, 'adjustInitP(event)', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
-		divSlider('parameter3SliderH', 'ICU_bed_per_hospital_bed', 0.005, 1, 0.05, 0.001, 'adjustInitP(event)', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
-		divSlider('parameter4SliderH', 'Infection_percent', 0, 1, 0, 0.0001, 'adjustInitP(event)', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
-		divSlider('parameter5SliderH', 'Distribution_age_minimum', 0, 120, 1, 0.01, 'adjustInitP(event)', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
-		divSlider('parameter6SliderH', 'Distribution_age_maximum', 0, 120, 90, 0.01, 'adjustInitP(event)', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
-		divSlider('parameter7SliderH', 'Distribution_age_peak', 0, 120, 25, 0.01, 'adjustInitP(event)', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
-		divSlider('parameter8SliderH', 'Distribution_Hygiene_mean', 0, 1, 0.5, 0.001, 'adjustInitP(event)', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
-		divSlider('parameter9SliderH', 'Distribution_Hygiene_Var', 1, 10, 1, 0.01, 'adjustInitP(event)', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
-		divSlider('parameter10SliderH', 'Essential_Agent_percent', 0, 1, 0.05, 0.001, 'adjustInitP(event)', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
-		divSlider('parameter11SliderH', 'Testing_Efficiency', 0, 1, 0.3, 0.001, 'adjustInitP(event)', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
-		divSlider('parameter12SliderH', 'Contact_Tracing_Capacity', 0, 100, 5, 0.01, 'adjustInitP(event)', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
-		divSlider('parameter13SliderH', 'Social_Distancing_Efficiency', 0, 1, 0.6, 0.001, 'adjustInitP(event)', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
-		divSlider('parameter14SliderH', 'Recovered_Agent_percent', 0, 1, 0, 0.001, 'adjustInitP(event)', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
+		divSlider('parameter2SliderH', 'Hospital_bed_per_agent', 0.001, 2, 0.1, 0.01, 'adjustInitP(event)', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
+		divSlider('parameter3SliderH', 'ICU_bed_per_hospital_bed', 0.005, 1, 0.05, 0.01, 'adjustInitP(event)', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
+		divSlider('parameter4SliderH', 'Infection_percent', 0, 1, 0, 0.001, 'adjustInitP(event)', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
+		divSlider('parameter5SliderH', 'Distribution_age_minimum', 0, 120, 1, 1, 'adjustInitP(event)', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
+		divSlider('parameter6SliderH', 'Distribution_age_maximum', 0, 120, 90, 1, 'adjustInitP(event)', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
+		divSlider('parameter7SliderH', 'Distribution_age_peak', 0, 120, 25, 1, 'adjustInitP(event)', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
+		divSlider('parameter8SliderH', 'Distribution_Hygiene_mean', 0, 1, 0.5, 0.1, 'adjustInitP(event)', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
+		divSlider('parameter9SliderH', 'Distribution_Hygiene_Var', 1, 10, 1, 0.1, 'adjustInitP(event)', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
+		divSlider('parameter10SliderH', 'Essential_Agent_percent', 0, 1, 0.05, 0.01, 'adjustInitP(event)', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
+		divSlider('parameter11SliderH', 'Testing_Efficiency', 0, 1, 0.3, 0.01, 'adjustInitP(event)', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
+		divSlider('parameter12SliderH', 'Contact_Tracing_Capacity', 0, 100, 5, 1, 'adjustInitP(event)', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
+		divSlider('parameter13SliderH', 'Social_Distancing_Efficiency', 0, 1, 0.6, 0.1, 'adjustInitP(event)', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
+		divSlider('parameter14SliderH', 'Recovered_Agent_percent', 0, 1, 0, 0.01, 'adjustInitP(event)', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
 
 		variablesRequested = ['']
 
@@ -4996,22 +4998,46 @@
 			dayTasks[timeMax] = {"p_exit": 1}
 
 			jsonFile["strategy"] = dayTasks
+			//todo add a unique name
+			jsonFile["experiment"] = create_UUID();
 			
 			return jsonFile
+		}
+
+		function create_UUID(){
+			var dt = new Date().getTime();
+			var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+				var r = (dt + Math.random()*16)%16 | 0;
+				dt = Math.floor(dt/16);
+				return (c=='x' ? r :(r&0x3|0x8)).toString(16);
+			});
+			return uuid;
+		}
+
+		function callBackend(jsonGenerated) {
+			// todo : change the server host later.
+//			var url = "https://api.abmforcovid.org/run"
+			var url = "http://localhost:8080/run"
+			axios.post(url, jsonGenerated).then(function(res){
+				// Whatever you want to do after posting
+				console.log(res.data)
+			})
 		}
 
 
 		function handleRun(event) {
 			jsonGenerated = generateJSON()
-			// document.getElementById('tempJSONdisp').innerHTML = JSON.stringify(jsonGenerated)
 			console.log(jsonGenerated)
+			console.log("calling api...")
+			callBackend(jsonGenerated)
+
 			document.getElementById('secondRunB').scrollIntoView();
 
-			var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(jsonGenerated));
-			var dlAnchorElem = document.getElementById('downloadAnchorElem');
-			dlAnchorElem.setAttribute("href", dataStr);
-			dlAnchorElem.setAttribute("download", "experiment.json");
-			dlAnchorElem.click();
+//			var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(jsonGenerated));
+//			var dlAnchorElem = document.getElementById('downloadAnchorElem');
+//			dlAnchorElem.setAttribute("href", dataStr);
+//			dlAnchorElem.setAttribute("download", "experiment.json");
+//			dlAnchorElem.click();
 		}
 
 		function handleOpen(e) {
