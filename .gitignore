@@ -9,6 +9,7 @@ Test.java
 .DS_Store
 lib/
 results/
+public/
 experiments/
 notebooks/
 temp/
