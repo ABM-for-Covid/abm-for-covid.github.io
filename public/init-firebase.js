@@ -23,7 +23,26 @@ function listenForData(uid) {
     })
 }
 
+function getExperimentConfig(uid) {
+    console.log('getExperimentConfig -> getExperimentConfig', uid)
+    firebase.database().ref(`experiments/${uid}/exp`).once('value', function (data) {
+        console.log('getExperimentConfig -> val', data.key, data.val())
+        const config = data.val()
+        for (let key in config) {
+            if (key in revSliderWithParamDictionary) {
+                if (document.getElementById(revSliderWithParamDictionary[key][1])) {
+                    document.getElementById(revSliderWithParamDictionary[key][1]).value = parseFloat(config[key])
+                }
+                if (document.getElementById('parameter' + revSliderWithParamDictionary[key][0] + 'Value')) {
+                    document.getElementById('parameter' + revSliderWithParamDictionary[key][0] + 'Value').innerHTML = parseFloat(config[key])
+                }
+            }
+        }
+    })
+}
+
 let expId = findGetParameter('expId')
 if (expId) {
+    getExperimentConfig(expId)
     listenForData(expId)
 }
