@@ -13,6 +13,7 @@ firebase.initializeApp(firebaseConfig);
 
 
 let graphDataFromDB = {}
+
 function listenForData(uid) {
     console.log('listenForData -> listenForData', uid)
     firebase.database().ref(`experiments/${uid}/res`).on('child_added', function (data) {
@@ -22,14 +23,7 @@ function listenForData(uid) {
     })
 }
 
-function convertToFormatV1(jsonVal) {
-    for (let i in jsonVal) {
-        if (!(i in graphDataFromDB)) {
-            graphDataFromDB[i] = []
-        }
-        graphDataFromDB[i][parseInt(jsonVal['day'])] = [parseInt(jsonVal['day']), parseFloat(jsonVal[i])]
-    }
-    console.log('graphData', graphDataFromDB)
+let expId = findGetParameter('expId')
+if (expId) {
+    listenForData(expId)
 }
-
-// listenForData('exp_4_1_a')
