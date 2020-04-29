@@ -5017,11 +5017,12 @@
 		function callBackend(jsonGenerated) {
 			// todo : change the server host later.
 //			var url = "https://api.abmforcovid.org/run"
-			var url = "http://localhost:8080/run"
+			var url = "http://50.112.19.155:8080/run"
 			axios.post(url, jsonGenerated , {
 				headers: {'Content-Type': 'application/json'}}).then(function(res){
 				// Whatever you want to do after posting
 				console.log(res.data)
+				window.open(`${location.origin}?expId=${res.data}`)
 			})
 		}
 
