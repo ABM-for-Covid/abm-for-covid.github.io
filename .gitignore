@@ -27,3 +27,4 @@ out/
 *.ipynb
 *.iml
 .firebase/
+functions/node_modules/
