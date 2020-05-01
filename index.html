@@ -758,8 +758,15 @@
 				<div id="VS4" style="width: 2%; height: 100%; overflow: hidden;position: relative; z-index: 1;display: inline-block;"></div>
 			</div>
 			<div id="BottomBar" style="width: 100%; height: 6%; overflow: hidden;position: relative; z-index: 1;display: inline-block;">
-				<input id="fileinputBack" accept=".csv" onchange="handleOpen(event)" type="file">
-				<a id="downloadAnchorElem" style="display:none"></a>
+				<div id="disclaimerBox" style="width: 100%; height: 100%; overflow: hidden;position: relative; z-index: 1;display: inline-flex; align-items: center; justify-content: center; font-size: 1vmax;">
+					<div id="disclaimerText" style="width: 90%; height: 100%; overflow: hidden;position: relative; z-index: 1;font-family: Source Sans Pro; font-size: 1vmax; text-align: center;">
+						<div><font style="font-weight: bold; font-size: 1.1vmax;"><br/>Disclaimer</font><br/>
+							This tool uses an agent based model to simulate effect of different policies on virus spread.  This output of the model depends on model assumptions and parameter choices. <br/>
+							The model is not quantitatively correct, rather it should be used for qualitative comparison of different strategies by invoking policies at different timeline.  It should be used for informational and research purposes only. Please carefully consider the parameters you choose. Interpret and use the simulated results responsibly. 
+						</div>
+					</div>
+				</div>
+				
 			</div>
 		</div>
 		<script type="text/javascript">
