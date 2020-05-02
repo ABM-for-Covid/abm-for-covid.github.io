@@ -279,6 +279,36 @@
 				/*outline: 1px solid slategrey;*/
 			}
 
+			#AboutBar::-webkit-scrollbar {
+				width: 5px;
+			}
+
+			#AboutBar::-webkit-scrollbar-track {
+				-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0);
+				border-radius: 30px;
+			}
+
+			#AboutBar::-webkit-scrollbar-thumb {
+				background-color: hsla(196, 100%, 50%, 1);
+				border-radius: 50px;
+				/*outline: 1px solid slategrey;*/
+			}
+
+			#AboutBar::-moz-scrollbar {
+				width: 5px;
+			}
+
+			#AboutBar::-moz-scrollbar-track {
+				-moz-box-shadow: inset 0 0 6px rgba(0,0,0,0);
+				border-radius: 30px;
+			}
+
+			#AboutBar::-moz-scrollbar-thumb {
+				background-color: hsla(196, 100%, 50%, 1);
+				border-radius: 50px;
+				/*outline: 1px solid slategrey;*/
+			}
+
 			
 
 			
@@ -349,16 +379,16 @@
 						</div>
 					</div>
 					<div id="menuH" style="width: 100%; height: 25%; overflow: hidden;position: relative; z-index: 1;display: inline-block;">
-						<div id="labmenuH" style="width: 7%; height: 90%; overflow: hidden;position: relative; z-index: 1;display: inline-block; font-size: 1vmax; font-family: Source Sans Pro; font-weight: bold; cursor: pointer; border-bottom: 2px solid hsla(190, 100%, 50%, 1); text-align: center;">Laboratory</div>
+						<div id="labmenuH" onclick="handleMenuClick(event)" style="width: 7%; height: 90%; overflow: hidden;position: relative; z-index: 1;display: inline-block; font-size: 1vmax; font-family: Source Sans Pro; font-weight: bold; cursor: pointer; border-bottom: 2px solid hsla(190, 100%, 50%, 1); text-align: center;">Laboratory</div>
 						<div id="menuVS1" style="width: 2%; height: 100%; overflow: hidden;position: relative; z-index: 1;display: inline-block;"></div>
-						<div id="aboutmenuH" style="width: 7%; height: 90%; overflow: hidden;position: relative; z-index: 1;display: inline-block; font-size: 1vmax; font-family: Source Sans Pro; font-weight: bold; cursor: pointer; border-bottom: 2px solid hsla(190, 100%, 50%, 0); text-align: center;">About</div>
+						<div id="aboutmenuH" onclick="handleMenuClick(event)" style="width: 7%; height: 90%; overflow: hidden;position: relative; z-index: 1;display: inline-block; font-size: 1vmax; font-family: Source Sans Pro; font-weight: bold; cursor: pointer; border-bottom: 2px solid hsla(190, 100%, 50%, 0); text-align: center;">About</div>
 						<div id="menuVS2" style="width: 2%; height: 90%; overflow: hidden;position: relative; z-index: 1;display: inline-block;"></div>
 						
-						<div id="updatesmenuH" style="width: 7%; height: 90%; overflow: hidden;position: relative; z-index: 1;display: inline-block; font-size: 1vmax; font-family: Source Sans Pro; font-weight: bold; cursor: pointer; border-bottom: 2px solid hsla(190, 100%, 50%, 0); text-align: center;">Updates</div>
+						<div id="publicationmenuH" onclick="handleMenuClick(event)"  style="width: 7%; height: 90%; overflow: hidden;position: relative; z-index: 1;display: inline-block; font-size: 1vmax; font-family: Source Sans Pro; font-weight: bold; cursor: pointer; border-bottom: 2px solid hsla(190, 100%, 50%, 0); text-align: center;">Publication</div>
 						<div id="menuVS4" style="width: 2%; height: 90%; overflow: hidden;position: relative; z-index: 1;display: inline-block;"></div>
-						<div id="teammenuH" style="width: 7%; height: 90%; overflow: hidden;position: relative; z-index: 1;display: inline-block; font-size: 1vmax; font-family: Source Sans Pro; font-weight: bold; cursor: pointer; border-bottom: 2px solid hsla(190, 100%, 50%, 0); text-align: center;">Team</div>
+						<div id="teammenuH" onclick="handleMenuClick(event)"  style="width: 7%; height: 90%; overflow: hidden;position: relative; z-index: 1;display: inline-block; font-size: 1vmax; font-family: Source Sans Pro; font-weight: bold; cursor: pointer; border-bottom: 2px solid hsla(190, 100%, 50%, 0); text-align: center;">Team</div>
 						<div id="menuVS5" style="width: 40%; height: 90%; overflow: hidden;position: relative; z-index: 1;display: inline-block;"></div>
-						<div id="githubIconH" style="width: 2%; height: 90%; overflow: hidden;position: relative; z-index: 1;display: inline-block; font-family: Source Sans Pro; font-weight: bold; cursor: pointer; text-align: center;"><i class="im im-github" style="font-size: 1.1vmax; "></i></div>
+						<div id="githubIconH" style="width: 2%; height: 90%; overflow: hidden;position: relative; z-index: 1;display: inline-block; font-family: Source Sans Pro; font-weight: bold; cursor: pointer; text-align: center;"><a href="https://github.com/ABM-for-Covid" style="text-decoration: none;" target="_blank"><i class="im im-github" style="font-size: 1.1vmax; "></i></a></div>
 						<div id="menuVS6" style="width: 1%; height: 90%; overflow: hidden;position: relative; z-index: 1;display: inline-block;"></div>
 						<div id="twitterIconH" style="width: 2%; height: 90%; overflow: hidden;position: relative; z-index: 1;display: inline-block; font-size: 0.6vmax; font-family: Source Sans Pro; font-weight: bold; cursor: pointer; text-align: center; color: hsla(196, 100%, 50%, 1);"><i class="im im-twitter" style="font-size: 1.1vmax; "></i></div>
 						<div id="menuVS6" style="width: 2%; height: 90%; overflow: hidden;position: relative; z-index: 1;display: inline-block;"></div>
@@ -366,8 +396,130 @@
 					</div>
 				</div>
 				<div id="VS2" style="width: 2%; height: 100%; overflow: hidden;position: relative; z-index: 1;display: inline-block;"></div>
+			</div><br/>
+			<div id="AboutBar" style="width: 100%; height: 94%; overflow-y: scroll;position: absolute; z-index: 1;display: inline-block; background: hsla(0, 0%, 100%, 1);">
+				<div id="outerSkin" style="width: 100%; height: 100%; position: relative; z-index: 1;">
+					<div id="VSAbout" style="width: 2%; height: 100%; overflow: hidden;position: relative; z-index: 1;display: inline-block;"></div>
+					<div style="width: 96%; height: 100%; position: relative; z-index: 1;font-family: Source Sans Pro; display: inline-block;">
+						<div id="HSabout1" style="width: 100%; height: 2%; overflow: hidden;position: relative; z-index: 1;display: inline-block;"></div>
+						<div><font style="font-weight: bold; font-size: 1.5vmax;">Modeling the Spread and Control of COVID-19.<br/><br/></font>
+							<font style="font-weight: bold; font-size: 1.3vmax;">Agent Parameters<br/><br/></font>
+							
+							<div style="width: 50%; height: 12%; overflow: hidden;position: relative; z-index: 1;display: inline-block; font-size: 0vmax;">
+								<div style="width: 50%; height: 100%; display: inline-block; overflow: hidden;">
+									<div style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; font-size: 1.1vmax;">
+										<div style="width: 80%;"><font style="font-weight: bold; font-size: 1.16vmax;">Age</font><br/>An integer attribute sampled from a triangular distribution between 1 and 90 with a peak of 25.</div>
+									</div>
+								</div>
+								<div style="width: 50%; height: 100%; display: inline-block;">
+									<object data="undraw/undraw_personal_notes_8n63.svg" type="image/svg+xml" style="width: 100%; height: 80%;"></object> 
+								</div>
+							</div>
+							<div style="width: 50%; height: 12%; overflow: hidden;position: relative; z-index: 1;display: inline-block; font-size: 0vmax;">
+								<div style="width: 50%; height: 100%; display: inline-block; overflow: hidden;">
+									<div style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; font-size: 1.1vmax;">
+										<div style="width: 80%;"><font style="font-weight: bold; font-size: 1.16vmax;">Hygiene</font><br/>A value between 0 and 1, where 1 corresponds to perfect hygiene. High hygiene level indicate in real life washing hands, wearing masks etc., which leads to less exposure of virus.</div>
+									</div>
+								</div>
+								<div style="width: 50%; height: 100%; display: inline-block;">
+									<object data="undraw/undraw_wash_hands_nwl2.svg" type="image/svg+xml" style="width: 100%; height: 80%;"></object> 
+								</div>
+							</div>
+							<font style="font-size: 1.2vmax;"><br/></font>
+							<div style="width: 50%; height: 12%; overflow: hidden;position: relative; z-index: 1;display: inline-block; font-size: 0vmax;">
+								<div style="width: 50%; height: 100%; display: inline-block; overflow: hidden;">
+									<div style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; font-size: 1.1vmax;">
+										<div style="width: 80%;"><font style="font-weight: bold; font-size: 1.16vmax;">Overall health</font><br/>An integer value between 0 and 3, both inclusive. A higher value corresponds to strong health and a lower value corresponds to poor health.</div>
+									</div>
+								</div>
+								<div style="width: 50%; height: 80%; display: inline-block;">
+									<object data="undraw/undraw_yoga_248n.svg" type="image/svg+xml" style="width: 100%; height: 100%;"></object> 
+								</div>
+							</div>
+							<div style="width: 50%; height: 12%; overflow: hidden;position: relative; z-index: 1;display: inline-block; font-size: 0vmax;">
+								<div style="width: 50%; height: 100%; display: inline-block; overflow: hidden;">
+									<div style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; font-size: 1.1vmax;">
+										<div style="width: 80%;"><font style="font-weight: bold; font-size: 1.16vmax;">Comorbidity</font><br/>An integer value between 0 and 2, both inclusive. A co-morbidity value of zero corresponds to an agent with no co-morbid conditions, and a lower value corresponds to prevalence of more serious co-morbid conditions.</div>
+									</div>
+								</div>
+								<div style="width: 50%; height: 80%; display: inline-block;">
+									<object data="undraw/undraw_doctor_kw5l.svg" type="image/svg+xml" style="width: 100%; height: 100%;"></object> 
+								</div>
+							</div>
+							<font style="font-size: 1.2vmax;"><br/></font>
+							<div style="width: 50%; height: 12%; overflow: hidden;position: relative; z-index: 1;display: inline-block; font-size: 0vmax;">
+								<div style="width: 50%; height: 100%; display: inline-block; overflow: hidden;">
+									<div style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; font-size: 1.1vmax;">
+										<div style="width: 80%;"><font style="font-weight: bold; font-size: 1.16vmax;">Immunity </font><br/>A value of either 0 or 1, where 0 corresponds to weak immunity and 1 corresponds to strong immunity.</div>
+									</div>
+								</div>
+								<div style="width: 50%; height: 80%; display: inline-block;">
+									<object data="undraw/undraw_Security_on_ff2u.svg" type="image/svg+xml" style="width: 100%; height: 100%;"></object> 
+								</div>
+							</div>
+							<font style="font-size: 1.2vmax;"><br/><br/><br/><br/></font>
+							<div style="width: 100%; height: 30%; overflow: hidden;position: relative; z-index: 1;display: inline-block; font-size: 0vmax;">
+								<div style="width:100%; height: 100%; display: inline-block; overflow: hidden;">
+									<div style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; font-size: 1.1vmax;">
+										<div style="width: 80%;"><iframe style="width: 100%; height: 100%" src="https://www.youtube.com/embed/yLqTdtJ_lQk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+									</div>
+								</div>
+							</div>
+							<font style="font-size: 1.2vmax;"><br/><br/><br/><br/></font>
+							<font style="font-weight: bold; font-size: 1.3vmax;">Policies<br/></font>
+							<font style="font-size: 1.2vmax;">
+								Many policies can be applied at any time during the simulation. These policies change and control agent behavior and also update environmental resources.<br/><br/>
+							</font>
+							<font style="font-size: 1.16vmax; font-weight: bold;">Border Close<br/></font>
+							<font style="font-size: 1.1vmax;">
+								This policy is applied to stop the incoming infectious agents in the environment.<br/><br/>
+							</font>
+							<font style="font-size: 1.16vmax; font-weight: bold;">Lockdown <br/></font>
+							<font style="font-size: 1.1vmax;">
+								Lockdown is applied to control the movement of the agents in the simulation. When applied it can make some agents static in the environment.<br/><br/>
+							</font>
+							<font style="font-size: 1.16vmax; font-weight: bold;">Age Based Lockdown<br/></font>
+							<font style="font-size: 1.1vmax;">
+								This lockdown is applied with a threshold age. All the agents above the threshold will be under lockdown.<br/><br/>
+							</font>
+							<font style="font-size: 1.16vmax; font-weight: bold;">Quarantine <br/></font>
+							<font style="font-size: 1.1vmax;">
+								This policy, if applied -- can remove certain agents from the environment. Sick and positively tested agents can be quarantined.<br/><br/>
+							</font>
+							<font style="font-size: 1.16vmax; font-weight: bold;">Daily Testing<br/></font>
+							<font style="font-size: 1.1vmax;">
+								When this policy is applied -- Daily, a random number of agents are being sampled and tested. There are parameters which can be modified to control capacity of daily testing and false negative percentage of test results.<br/><br/>
+							</font>
+							<font style="font-size: 1.16vmax; font-weight: bold;">Contact Tracing <br/></font>
+							<font style="font-size: 1.1vmax;">
+								This policy trace back to a certain number of contacts of an agent when it is tested positive. If Quarantine is also invoked, the traced agents will be isolated from the environment.<br/><br/>
+							</font>
+							<font style="font-size: 1.16vmax; font-weight: bold;">Social Distancing<br/></font>
+							<font style="font-size: 1.1vmax;">
+								This policy when applied -- It controls how close any one agent come to another one.<br/><br/>
+							</font>
+							<font style="font-size: 1.16vmax; font-weight: bold;">Hospitalization <br/></font>
+							<font style="font-size: 1.1vmax;">
+								If this policy is invoked, very sick agents goes gets isolated and moved to hospital environment subject to availability of hospital beds.<br/><br/>
+							</font>
+							<font style="font-size: 1.16vmax; font-weight: bold;">Reinforcement<br/></font>
+							<font style="font-size: 1.1vmax;">
+								Hospital beds and ICU beds can be always modified during the simulation.<br/><br/><br/><br/>
+							</font>
+							
+							
+						</div>
+					</div>
+				</div>
+				
 			</div>
-			<div id="MiddleBar" style="width: 100%; height: 88%; overflow: hidden;position: relative; z-index: 1;display: inline-block; background: hsla(0, 0%, 92%, 1);">
+			<div id="PublicationBar" style="width: 100%; height: 94%; overflow: hidden;position: absolute; z-index: 1;display: inline-block; background: hsla(0, 0%, 92%, 1);">
+				
+			</div>
+			<div id="TeamBar" style="width: 100%; height: 94%; overflow: hidden;position: absolute; z-index: 1;display: inline-block; background: hsla(0, 0%, 92%, 1);">
+				
+			</div>
+			<div id="MiddleBar" style="width: 100%; height: 88%; overflow: hidden;position: relative; z-index: 2;display: inline-block; background: hsla(0, 0%, 92%, 1);">
 				<div id="VS3" style="width: 2%; height: 100%; overflow: hidden;position: relative; z-index: 1;display: inline-block;"></div>
 				<div id="middleSection" style="width: 96%; height: 100%; overflow: hidden;position: relative; z-index: 1;display: inline-block; ">
 					<div id="HS1" style="width: 100%; height: 1.5%; overflow: hidden;position: relative; z-index: 1;display: inline-block;"></div>
@@ -380,15 +532,10 @@
 									<div style="width: 100%; height: 100%; font-family: Source Sans Pro; font-size: 1.3vmax; display:flex; align-items: center;">EXPERIMENT</div>
 								</div>
 								<div id="VSii1" style="width: 69%; height: 100%; overflow: hidden;position: relative; z-index: 1;display: inline-block;"></div>
-								<!-- <div id="runName" onclick="handleRun(event)" style="width: 6%; height: 100%; overflow: hidden;position: relative; z-index: 1;display: inline-block; ">
+								<div id="VSii2" style="width: 15%; height: 100%; overflow: hidden;position: relative; z-index: 1;display: inline-block;"></div>
+								<div id="runName" onclick="handleRun(event)" style="width: 6%; height: 100%; overflow: hidden;position: relative; z-index: 1;display: inline-block; ">
 									<div style="width: 100%; height: 90%; background: hsla(195, 100%, 50%, 1); border-radius: 10px; display: flex; align-items: center; justify-content: center; cursor: pointer;">
 										<div id="RunB" style="width: 100%; height: 100%; font-family: Source Sans Pro; font-size: 1vmax; color: white; font-weight: bold; display:flex; align-items: center; justify-content: center;">RUN</div>
-									</div>
-								</div> -->
-								<div id="VSii2" style="width: 2%; height: 100%; overflow: hidden;position: relative; z-index: 1;display: inline-block;"></div>
-								<div id="shareName" style="width: 13%; height: 100%; overflow: hidden;position: relative; z-index: 1;display: inline-block; ">
-									<div style="width: 100%; height: 90%; background: hsla(280, 100%, 50%, 1); border-radius: 10px; display: flex; align-items: center; justify-content: center; cursor: pointer;">
-										<div style="width: 100%; height: 100%; font-family: Source Sans Pro; font-size: 1vmax; color: white; font-weight: bold; display:flex; align-items: center; justify-content: center;">Shareable Link</div>
 									</div>
 								</div>
 							</div>
@@ -762,9 +909,16 @@
 				</div>
 				<div id="VS4" style="width: 2%; height: 100%; overflow: hidden;position: relative; z-index: 1;display: inline-block;"></div>
 			</div>
-			<div id="BottomBar" style="width: 100%; height: 6%; overflow: hidden;position: relative; z-index: 1;display: inline-block;">
-				<input id="fileinputBack" accept=".csv" onchange="handleOpen(event)" type="file">
-				<a id="downloadAnchorElem" style="display:none"></a>
+			<div id="BottomBar" style="width: 100%; height: 6%; overflow: hidden;position: relative; z-index: 2;display: inline-block;">
+				<div id="disclaimerBox" style="width: 100%; height: 100%; overflow: hidden;position: relative; z-index: 1;display: inline-flex; align-items: center; justify-content: center; font-size: 1vmax;">
+					<div id="disclaimerText" style="width: 90%; height: 100%; overflow: hidden;position: relative; z-index: 1;font-family: Source Sans Pro; font-size: 1vmax; text-align: center;">
+						<div><font style="font-weight: bold; font-size: 1.1vmax;">Disclaimer</font><br/>
+							This tool uses an agent based model to simulate effect of different policies on virus spread.  This output of the model depends on model assumptions and parameter choices. <br/>
+							The model is not quantitatively correct, rather it should be used for qualitative comparison of different strategies by invoking policies at different timeline.  It should be used for informational and research purposes only. Please carefully consider the parameters you choose. Interpret and use the simulated results responsibly. 
+						</div>
+					</div>
+				</div>
+				
 			</div>
 		</div>
 		<script type="text/javascript">
@@ -4699,12 +4853,12 @@
 
 		function generateDummy() {
 			for (dayV = 0; dayV <= timeMax; dayV++) {
-				plotData['infected_agents'].push([dayV, Math.random()*40 + 200*Math.exp(-1*Math.pow((dayV - 60), 2)/200)])
-				plotData['exposed_agents'].push([dayV, Math.random()*40 + 700*Math.exp(-1*Math.pow((dayV - 150), 2)/100)])
-				plotData['recovered_agents'].push([dayV, Math.random()*50 + 900*Math.exp(-1*Math.pow((dayV - 40), 2)/700)])
-				plotData['dead_agents'].push([dayV, Math.random()*20 + 200*Math.exp(-1*Math.pow((dayV - 44), 2)/100)])
-				plotData['asympt_agents'].push([dayV, Math.random()*20 + 900*Math.exp(-1*Math.pow((dayV - 134), 2)/1200)])
-				plotData['suscept_agents'].push([dayV, Math.random()*70 + 900*Math.exp(-1*Math.pow((dayV + 10), 2)/2000)])
+				plotData['infected_agents'].push([dayV, Math.random()*1 + 60*Math.exp(-1*Math.pow((dayV - 60), 2)/200)])
+				plotData['exposed_agents'].push([dayV, Math.random()*1 + 70*Math.exp(-1*Math.pow((dayV - 150), 2)/100)])
+				plotData['recovered_agents'].push([dayV, Math.random()*1 + 90*Math.exp(-1*Math.pow((dayV - 40), 2)/700)])
+				plotData['dead_agents'].push([dayV, Math.random()*3 + 20*Math.exp(-1*Math.pow((dayV - 44), 2)/100)])
+				plotData['asympt_agents'].push([dayV, Math.random()*1 + 90*Math.exp(-1*Math.pow((dayV - 134), 2)/1200)])
+				plotData['suscept_agents'].push([dayV, Math.random()*1 + 90*Math.exp(-1*Math.pow((dayV + 10), 2)/2000)])
 			}
 		}
 
@@ -4741,14 +4895,14 @@
 				for (defCase in plotData) {
 					if (document.getElementById(defCase).checked) {
 						if (eventLoc[0] < timeMax/2) {
-							updateText('plotG', 'plot@' + defCase + '@Text',  {x: eventLoc[0] + 0.04*timeMax,  y: (0.74 - plotLineSpace)*plotMax, text : plotDataParameters[defCase].name + " : " + parseInt(plotData[defCase][parseInt(eventLoc)][1])})
+							updateText('plotG', 'plot@' + defCase + '@Text',  {x: eventLoc[0] + 0.04*timeMax,  y: (0.74 - plotLineSpace)*plotMax, text : plotDataParameters[defCase].name + " : " + plotData[defCase][parseInt(eventLoc)][1].toFixed(3) + '%'})
 							plotLineSpace = plotLineSpace + 0.06
 						}
 						else {
-							updateText('plotG', 'plot@' + defCase + '@Text',  {x: eventLoc[0] - 0.3*timeMax,  y: (0.74 - plotLineSpace)*plotMax, text : plotDataParameters[defCase].name + " : " + parseInt(plotData[defCase][parseInt(eventLoc)][1])})
+							updateText('plotG', 'plot@' + defCase + '@Text',  {x: eventLoc[0] - 0.3*timeMax,  y: (0.74 - plotLineSpace)*plotMax, text : plotDataParameters[defCase].name + " : " + plotData[defCase][parseInt(eventLoc)][1].toFixed(3) + '%'})
 							plotLineSpace = plotLineSpace + 0.06
 						}
-						updatePointXY('plotG', 'plot@' + defCase + '@Point', parseInt(eventLoc[0]),parseInt(plotData[defCase][parseInt(eventLoc)][1]) )
+						updatePointXY('plotG', 'plot@' + defCase + '@Point', parseInt(eventLoc[0]), plotData[defCase][parseInt(eventLoc)][1])
 					}
 				}
 
@@ -4878,6 +5032,87 @@
 				
 		}
 
+		// defaultJSON = {a_false_negative_percent: 0.3, a_social_distancing_efficiency: 0.6, agent_density: 0.0001, c_contact_trace: 5, distribution_age_max: 90, distribution_age_min: 1, distribution_age_peak: 25, distribution_hygiene_mean: 0.6, distribution_hygiene_var: 1, essential_agent_percent: 0.05, experiment: "e93f772a-788c-4231-9b7d-7250b1ea5dfd", hospital_bed_per_agent: 0.101, icu_bed_per_hospital_bed: 0.055, infection_percent: 0.001, num_agents: 10000, recovery_percent: 0, strategy: {0: {a_lockdown_threshhold: 60, c_testing: 5, c_icu_beds: 0, c_hospital_bed: 0}, 3: {p_lockdown: 1}, 13: {p_lockdown: 0}, 15: {p_social_distancing: 1}, 20: {c_hospital_bed: 120}, 21: {c_hospital_bed: 0}, 30: {p_quarantine: 1, c_icu_beds: 120}, 31: {c_icu_beds: 0}, 39: {p_lockdown: 1}, 52: {p_daily_testing: 1}, 60: {c_icu_beds: 450}, 61: {c_icu_beds: 0}, 63: {c_testing: 40}, 70: {p_lockdown: 0}, 80: {c_hospital_bed: 338}, 81: {c_hospital_bed: 0}, 90: {p_age_lockdown: 1, c_testing: 70}, 95: {a_lockdown_threshhold: 50}, 100: {c_icu_beds: 180}, 101: {c_icu_beds: 0}, 110: {p_lockdown: 1}, 120: {p_quarantine: 0, a_lockdown_threshhold: 55, c_icu_beds: 45}, 121: {c_icu_beds: 0}, 140: {p_social_distancing: 0}, 142: {p_lockdown: 0}, 144: {p_age_lockdown: 0, c_hospital_bed: 223}, 145: {c_hospital_bed: 0}, 148: {p_daily_testing: 0}, 150: {p_exit: 1}}}
+
+		defaultJSON = {distribution_hygiene_mean : 0.6, experiment: "exp_4_1_a", infection_percent : 5.0E-4, num_agents : 200, strategy : {0 : {p_close_borders : 1},7 : {p_hospitalization : 1},160 : {p_exit : 1}}}
+
+
+
+		function setUpParameters(jsonParameterFile) {
+			for (graphVS in vslideGs) {
+				for (var dayp in vslideGs[graphVS][2]) {
+					vslideGs[graphVS][2][dayp] = vslideGs[graphVS][7]
+				}
+			}
+			for (var parameterK in jsonParameterFile) {
+				if (initPLinkRev[parameterK] != undefined) {
+					document.getElementById('parameter' + initPLink[initPLinkRev[parameterK]][0] + 'Value').innerHTML = jsonParameterFile[parameterK]
+					document.getElementById(initPLinkRev[parameterK]).value = jsonParameterFile[parameterK]
+				}
+				else {
+					if (parameterK == 'strategy') {
+						strategyData = jsonParameterFile[parameterK]
+						for (var sPG in singleParameterGraphMap) {
+							sPGToUpdateData = {}
+							updateRangeV = []
+							for (dayValue in strategyData) {
+								if (strategyData[dayValue][singleParameterGraphMap[sPG][8]] != undefined) {
+									if (strategyData[dayValue][singleParameterGraphMap[sPG][8]] == 1) {
+										updateRangeV.push(parseInt(dayValue))
+									}
+									else if (strategyData[dayValue][singleParameterGraphMap[sPG][8]] == 0) {
+										updateRangeV.push(parseInt(dayValue))
+										sPGToUpdateData[dayValue] = updateRangeV.slice()
+										updateRangeV = []
+									}
+								}
+							}
+							if (updateRangeV.length == 1) {
+								updateRangeV.push(timeMax)
+								sPGToUpdateData[timeMax] = updateRangeV.slice()
+								updateRangeV = []
+							}
+							for (pointsRanges in sPGToUpdateData) {
+								if (sPGToUpdateData[pointsRanges].length == 2) {
+									addDynaPPointSpecific(sPGToUpdateData[pointsRanges], sPG)
+								}
+							}
+						}
+
+						for (graphVS in vslideGs) {
+							updateRangeVs = []
+							for (dayValue in strategyData) {
+								if (strategyData[dayValue][vslideGs[graphVS][11]] != undefined) {
+
+									if (graphVS == 'ICUBedsGraph' || graphVS == 'HBedsGraph') {
+										vslideGs[graphVS][2][parseInt(dayValue)] = strategyData[dayValue][vslideGs[graphVS][11]]
+									}
+									else {
+										updateRangeVs.push([parseInt(dayValue), strategyData[dayValue][vslideGs[graphVS][11]]])
+									}
+								}
+							}
+							
+							if (graphVS != 'ICUBedsGraph' && graphVS != 'HBedsGraph') {
+								for (updateV = 0; updateV < updateRangeVs.length; updateV++) {
+									for (dayp = updateRangeVs[updateV][0]; dayp <= timeMax; dayp++) {
+										vslideGs[graphVS][2][dayp] = updateRangeVs[updateV][1]
+									}
+								}
+								drawAllLinesAndPointsVS(graphVS)
+									
+							}
+							else {
+								drawAllLinesAndPointsVS(graphVS)
+							}
+
+						}
+
+					}
+				}
+			}
+		}
+
 
 		function doDefaults() {
 			document.getElementById('lockdown_disp').checked = true
@@ -4920,7 +5155,7 @@
 			drawAllLinesAndPointsVS('HBedsGraph')
 		}
 
-		doDefaults()
+		// doDefaults()
 
 		function adjustInitP(event) {
 			document.getElementById('parameter' + initPLink[event.target.id][0] + 'Value').innerHTML = event.target.value
@@ -4928,7 +5163,12 @@
 
 		initPLink = {'Number_of_Agents': [0, "num_agents"], 'Agent_Density': [1, "agent_density"], 'Hospital_bed_per_agent':[2, "hospital_bed_per_agent"], 'ICU_bed_per_hospital_bed':[3, "icu_bed_per_hospital_bed"], 'Infection_percent':[4, "infection_percent"], 'Distribution_age_minimum':[5, "distribution_age_min"], 'Distribution_age_maximum': [6, "distribution_age_max"], 'Distribution_age_peak': [7, "distribution_age_peak"], 'Distribution_Hygiene_mean': [8, "distribution_hygiene_mean"], 'Distribution_Hygiene_Var': [9, "distribution_hygiene_var"], 'Essential_Agent_percent': [10, "essential_agent_percent"], 'Testing_Efficiency': [11, "a_false_negative_percent"], 'Contact_Tracing_Capacity': [12, "c_contact_trace"], 'Social_Distancing_Efficiency': [13, "a_social_distancing_efficiency"], 'Recovered_Agent_percent': [14, "recovery_percent"]}
 
-		divSlider('parameter0SliderH', 'Number_of_Agents', 10, 10000, 100, 1, 'adjustInitP(event)', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
+		initPLinkRev = {}
+		for (plink in initPLink) {
+			initPLinkRev[initPLink[plink][1]] = plink
+		}
+
+		divSlider('parameter0SliderH', 'Number_of_Agents', 10, 20000, 100, 1, 'adjustInitP(event)', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
 		divSlider('parameter1SliderH', 'Agent_Density', 0.00001, 0.001, 0.0001, 0.000001, 'adjustInitP(event)', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
 		divSlider('parameter2SliderH', 'Hospital_bed_per_agent', 0.001, 2, 0.1, 0.01, 'adjustInitP(event)', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
 		divSlider('parameter3SliderH', 'ICU_bed_per_hospital_bed', 0.005, 1, 0.05, 0.01, 'adjustInitP(event)', '100%', '5px', 'hsla(0, 0%, 92%, 1)', '16px', 'hsla(190, 100%, 50%, 1)', '')
@@ -4998,7 +5238,7 @@
 			dayTasks[timeMax] = {"p_exit": 1}
 
 			jsonFile["strategy"] = dayTasks
-			//todo add a unique name
+			// todo add a unique name
 			jsonFile["experiment"] = create_UUID();
 			
 			return jsonFile
@@ -5016,7 +5256,7 @@
 
 		function callBackend(jsonGenerated) {
 			// todo : change the server host later.
-//			var url = "https://api.abmforcovid.org/run"
+			// var url = "https://api.abmforcovid.org/run"
 			const actualBackend = 'http://50.112.19.155:8080/run'
 			var url = `https://us-central1-abmforcovid.cloudfunctions.net/callBackend?url=${actualBackend}`
 			axios.post(url, jsonGenerated , {
@@ -5036,13 +5276,9 @@
 			callBackend(jsonGenerated)
 
 			document.getElementById('secondRunB').scrollIntoView();
-
-//			var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(jsonGenerated));
-//			var dlAnchorElem = document.getElementById('downloadAnchorElem');
-//			dlAnchorElem.setAttribute("href", dataStr);
-//			dlAnchorElem.setAttribute("download", "experiment.json");
-//			dlAnchorElem.click();
 		}
+
+
 
 		function handleOpen(e) {
 			var file = e.target.files[0];
@@ -5077,8 +5313,6 @@
 			
 		}
 
-
-
 		function connectToPlotData(readData) {
 			for (var curveD in plotData) {
 				plotData[curveD] = readData[curveD]
@@ -5089,80 +5323,55 @@
 		}
 
 
+		setUpParameters(defaultJSON)
 
+		function handleMenuClick(event) {
+			if (event.target.id == 'labmenuH') {
+				document.getElementById('middleSection').style.zIndex = 3
+				document.getElementById('labmenuH').style.borderBottom = "2px solid hsla(190, 100%, 50%, 1)"
+				document.getElementById('AboutBar').style.zIndex = 1
+				document.getElementById('PublicationBar').style.zIndex = 1
+				document.getElementById('TeamBar').style.zIndex = 1
 
+				document.getElementById('aboutmenuH').style.borderBottom = "0px solid white"
+				document.getElementById('publicationmenuH').style.borderBottom = "0px solid white"
+				document.getElementById('teammenuH').style.borderBottom = "0px solid white"
+			}
+			else if (event.target.id == 'aboutmenuH') {
+				document.getElementById('middleSection').style.zIndex = 1
+				document.getElementById('AboutBar').style.zIndex = 3
+				document.getElementById('aboutmenuH').style.borderBottom = "2px solid hsla(190, 100%, 50%, 1)"
+				document.getElementById('PublicationBar').style.zIndex = 1
+				document.getElementById('TeamBar').style.zIndex = 1
 
+				document.getElementById('labmenuH').style.borderBottom = "0px solid white"
+				document.getElementById('publicationmenuH').style.borderBottom = "0px solid white"
+				document.getElementById('teammenuH').style.borderBottom = "0px solid white"
+			}
+			else if (event.target.id == 'publicationmenuH') {
+				document.getElementById('middleSection').style.zIndex = 1
+				document.getElementById('PublicationBar').style.zIndex = 3
+				document.getElementById('publicationmenuH').style.borderBottom = "2px solid hsla(190, 100%, 50%, 1)"
+				document.getElementById('AboutBar').style.zIndex = 1
+				document.getElementById('TeamBar').style.zIndex = 1
 
-		
-		function moveParticles(ofBoundary) {
-		}
+				document.getElementById('labmenuH').style.borderBottom = "0px solid white"
+				document.getElementById('aboutmenuH').style.borderBottom = "0px solid white"
+				document.getElementById('teammenuH').style.borderBottom = "0px solid white"
+			}
+			else if (event.target.id == 'teammenuH') {
+				document.getElementById('middleSection').style.zIndex = 1
+				document.getElementById('TeamBar').style.zIndex = 3
+				document.getElementById('teammenuH').style.borderBottom = "2px solid hsla(190, 100%, 50%, 1)"
+				document.getElementById('PublicationBar').style.zIndex = 1
+				document.getElementById('AboutBar').style.zIndex = 1
 
-		function animateParticles(ofBoundary) {
-		}
-
-		
-
-		function handleCalculationPlaying() {
-			
-		}
-
-		function handleAnimationPlaying() {
-		}
-
-
-		function setAnimationDetails() {
-			frameInterval = (1000/simulationParameters.frameRate)
-
-			calculationFrameInterval = (simulationParameters.frameRate/(timeStepsPerDay*simulationParameters.daysEverySecond))*frameInterval
-		}
-
-		// setAnimationDetails()
-
-
-		function playAnimationLoop(event) {
-			loopinterval = setInterval(frame, frameInterval);
-			function frame() {
-				loopcount = loopcount + 1
-				if (playing) {
-					handleAnimationPlaying()
-				}
+				document.getElementById('labmenuH').style.borderBottom = "0px solid white"
+				document.getElementById('publicationmenuH').style.borderBottom = "0px solid white"
+				document.getElementById('aboutmenuH').style.borderBottom = "0px solid white"
 			}
 		}
 
-		function playCalculationLoop(event) {
-			loopinterval2 = setInterval(frame, calculationFrameInterval);
-			function frame() {
-				timecount = timecount + 1
-				if (playing) {
-					handleCalculationPlaying()
-				}
-			}
-		}
-
-		// playCalculationLoop()
-		// playAnimationLoop()
-
-		function playpauseSim(event) {
-			if (playing) {
-		 		playing = false
-		 		document.getElementById('playbutton').value = 'PLAY'
-		 	}
-		 	else {
-		 		playing = true
-		 		document.getElementById('playbutton').value = 'PAUSE'
-		 	}
-		}
-
-		function handleLayout2() {
-			if (dmode == 'portrait') {
-				
-			}
-			if (dmode == 'landscape') {
-				
-			}
-		}
-
-		// handleLayout2()
 
 
 		</script>
