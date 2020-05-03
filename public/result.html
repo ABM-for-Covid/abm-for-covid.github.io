@@ -5138,12 +5138,12 @@
 
 		function r_generateDummy() {
 			for (dayV = 0; dayV <= r_timeMax; dayV++) {
-				r_plotData['infected_agents'].push([dayV, Math.random() * 1 + 60 * Math.exp(-1 * Math.pow((dayV - 60), 2) / 200)]);
-				r_plotData['exposed_agents'].push([dayV, Math.random() * 1 + 70 * Math.exp(-1 * Math.pow((dayV - 150), 2) / 100)]);
-				r_plotData['recovered_agents'].push([dayV, Math.random() * 1 + 90 * Math.exp(-1 * Math.pow((dayV - 40), 2) / 700)]);
-				r_plotData['dead_agents'].push([dayV, Math.random() * 3 + 20 * Math.exp(-1 * Math.pow((dayV - 44), 2) / 100)]);
-				r_plotData['asympt_agents'].push([dayV, Math.random() * 1 + 90 * Math.exp(-1 * Math.pow((dayV - 134), 2) / 1200)]);
-				r_plotData['suscept_agents'].push([dayV, Math.random() * 1 + 90 * Math.exp(-1 * Math.pow((dayV + 10), 2) / 2000)])
+				r_plotData['infected_agents'].push([dayV, Math.random() * 0.001 + 0.02 * Math.exp(-1 * Math.pow((dayV - 60), 2) / 200)]);
+				r_plotData['exposed_agents'].push([dayV, Math.random() * 0.001 + 0.01 * Math.exp(-1 * Math.pow((dayV - 150), 2) / 100)]);
+				r_plotData['recovered_agents'].push([dayV, Math.random() * 0.001 + 0.02* Math.exp(-1 * Math.pow((dayV - 40), 2) / 700)]);
+				r_plotData['dead_agents'].push([dayV, Math.random() * 0.01 + 0.01* Math.exp(-1 * Math.pow((dayV - 44), 2) / 100)]);
+				r_plotData['asympt_agents'].push([dayV, Math.random() * 0.001 + 0.03 * Math.exp(-1 * Math.pow((dayV - 134), 2) / 1200)]);
+				r_plotData['suscept_agents'].push([dayV, Math.random() * 0.001 + 0.09 * Math.exp(-1 * Math.pow((dayV + 10), 2) / 2000)])
 			}
 		}
 
@@ -5238,7 +5238,7 @@
 			graphoptions.xmin = 0;
 
 			graphoptions.ymax = r_plotMax;
-			graphoptions.ymin = -1;
+			graphoptions.ymin = (-1)*r_plotMax*0.01;
 
 			graphoptions.axislocationX = 0;
 			graphoptions.axislocationY = 0;
@@ -5368,16 +5368,39 @@
 
 		}
 
+		function r_findMax() {
+			newMax = 0
+			for (defCase in r_plotData) {
+				if (document.getElementById(defCase).checked) {
+					for (d_values in r_plotData[defCase]) {
+						if (r_plotData[defCase][d_values][1] > newMax) {
+							newMax = r_plotData[defCase][d_values][1]
+						}
+					}
+				}
+			}
+			r_plotMax = newMax
+			r_updateGraphZoom('plotG', {ymin:(-1)*r_plotMax*0.01, ymax: newMax})
+			r_updateLine('plotG', 'yAxesLine', {x1: 0, y1: 0, x2: 0, y2: r_plotMax});
+		}
+
 
 		for (defCase in r_plotData) {
 			if (defCase == 'infected_agents' || defCase == 'asympt_agents' || defCase == 'recovered_agents') {
 				document.getElementById(defCase).checked = true;
-				r_updatePlot(defCase)
 			}
 			else {
 				document.getElementById(defCase).checked = false
 			}
 
+		}
+
+		r_findMax()
+
+		for (defCase in r_plotData) {
+			if (defCase == 'infected_agents' || defCase == 'asympt_agents' || defCase == 'recovered_agents') {
+				r_updatePlot(defCase)
+			}
 		}
 
 		// r_defaultJSON = {a_false_negative_percent: 0.3, a_social_distancing_efficiency: 0.6, agent_density: 0.0001, c_contact_trace: 5, distribution_age_max: 90, distribution_age_min: 1, distribution_age_peak: 25, distribution_hygiene_mean: 0.6, distribution_hygiene_var: 1, essential_agent_percent: 0.05, experiment: "e93f772a-788c-4231-9b7d-7250b1ea5dfd", hospital_bed_per_agent: 0.101, icu_bed_per_hospital_bed: 0.055, infection_percent: 0.001, num_agents: 10000, recovery_percent: 0, strategy: {0: {a_lockdown_threshhold: 60, c_testing: 5, c_icu_beds: 0, c_hospital_bed: 0}, 3: {p_lockdown: 1}, 13: {p_lockdown: 0}, 15: {p_social_distancing: 1}, 20: {c_hospital_bed: 120}, 21: {c_hospital_bed: 0}, 30: {p_quarantine: 1, c_icu_beds: 120}, 31: {c_icu_beds: 0}, 39: {p_lockdown: 1}, 52: {p_daily_testing: 1}, 60: {c_icu_beds: 450}, 61: {c_icu_beds: 0}, 63: {c_testing: 40}, 70: {p_lockdown: 0}, 80: {c_hospital_bed: 338}, 81: {c_hospital_bed: 0}, 90: {p_age_lockdown: 1, c_testing: 70}, 95: {a_lockdown_threshhold: 50}, 100: {c_icu_beds: 180}, 101: {c_icu_beds: 0}, 110: {p_lockdown: 1}, 120: {p_quarantine: 0, a_lockdown_threshhold: 55, c_icu_beds: 45}, 121: {c_icu_beds: 0}, 140: {p_social_distancing: 0}, 142: {p_lockdown: 0}, 144: {p_age_lockdown: 0, c_hospital_bed: 223}, 145: {c_hospital_bed: 0}, 148: {p_daily_testing: 0}, 150: {p_exit: 1}}}
@@ -5708,9 +5731,14 @@
 
 		}
 
+
+
 		function r_connectToPlotData(readData) {
 			for (var curveD in r_plotData) {
 				r_plotData[curveD] = readData[curveD];
+			}
+			r_findMax()
+			for (var curveD in r_plotData) {
 				if (document.getElementById(curveD).checked) {
 					r_updatePlot(curveD)
 				}
