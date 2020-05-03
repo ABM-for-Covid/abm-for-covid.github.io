@@ -281,31 +281,31 @@
 				/*outline: 1px solid slategrey;*/
 			}
 
-			#AboutBar::-webkit-scrollbar {
+			.bars::-webkit-scrollbar {
 				width: 5px;
 			}
 
-			#AboutBar::-webkit-scrollbar-track {
+			.bars::-webkit-scrollbar-track {
 				-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0);
 				border-radius: 30px;
 			}
 
-			#AboutBar::-webkit-scrollbar-thumb {
+			.bars::-webkit-scrollbar-thumb {
 				background-color: hsla(196, 100%, 50%, 1);
 				border-radius: 50px;
 				/*outline: 1px solid slategrey;*/
 			}
 
-			#AboutBar::-moz-scrollbar {
+			.bars::-moz-scrollbar {
 				width: 5px;
 			}
 
-			#AboutBar::-moz-scrollbar-track {
+			.bars::-moz-scrollbar-track {
 				-moz-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0);
 				border-radius: 30px;
 			}
 
-			#AboutBar::-moz-scrollbar-thumb {
+			.bars::-moz-scrollbar-thumb {
 				background-color: hsla(196, 100%, 50%, 1);
 				border-radius: 50px;
 				/*outline: 1px solid slategrey;*/
@@ -373,8 +373,7 @@
 					<div id="titleAndDescription" style="width: 100%; height: 75%; overflow: hidden;position: relative; z-index: 1;display: flex; align-items: center;">
 						<div id="titleH">
 							<font style="font-family: Raleway; font-size: 2.2vmax; font-weight: bold; "> ABM for
-							Covid</font><br/><font style="font-family: Source Sans Pro; font-size: 0.7vmax; font-weight: bold; "> Agent Based
-							Modeling</font>
+							Covid</font><br/><font style="font-family: Source Sans Pro; font-size: 0.7vmax; font-weight: bold; "> Agent Based Modeling</font>
 						</div>
 					</div>
 					<div id="menuH" style="width: 100%; height: 25%; overflow: hidden;position: relative; z-index: 1;display: inline-block;">
@@ -388,8 +387,6 @@
 						<div id="menuVS4" style="width: 2%; height: 90%; overflow: hidden;position: relative; z-index: 1;display: inline-block;"></div>
 						<div id="videosmenuH" onclick="r_handleMenuClick(event)" style="width: 7%; height: 90%; overflow: hidden;position: relative; z-index: 1;display: inline-block; font-size: 1vmax; font-family: Source Sans Pro; font-weight: bold; cursor: pointer; border-bottom: 2px solid hsla(190, 100%, 50%, 0); text-align: center;">Videos</div>
 						<div id="menuVS5" style="width: 2%; height: 90%; overflow: hidden;position: relative; z-index: 1;display: inline-block;"></div>
-						<div id="simsmenuH" onclick="r_handleMenuClick(event)" style="width: 7%; height: 90%; overflow: hidden;position: relative; z-index: 1;display: inline-block; font-size: 1vmax; font-family: Source Sans Pro; font-weight: bold; cursor: pointer; border-bottom: 2px solid hsla(190, 100%, 50%, 0); text-align: center;">Simulations</div>
-						<div id="menuVS6" style="width: 2%; height: 90%; overflow: hidden;position: relative; z-index: 1;display: inline-block;"></div>
 						<div id="teammenuH" onclick="r_handleMenuClick(event)" style="width: 7%; height: 90%; overflow: hidden;position: relative; z-index: 1;display: inline-block; font-size: 1vmax; font-family: Source Sans Pro; font-weight: bold; cursor: pointer; border-bottom: 2px solid hsla(190, 100%, 50%, 0); text-align: center;">Team</div>
 						<div id="menuVS7" style="width: 40%; height: 90%; overflow: hidden;position: relative; z-index: 1;display: inline-block;"></div>
 						<div id="githubIconH" style="width: 2%; height: 90%; overflow: hidden;position: relative; z-index: 1;display: inline-block; font-family: Source Sans Pro; font-weight: bold; cursor: pointer; text-align: center;">
@@ -407,160 +404,362 @@
 				<div id="VS2" style="width: 2%; height: 100%; overflow: hidden;position: relative; z-index: 1;display: inline-block;"></div>
 			</div>
 			<br/>
-			<div id="AboutBar" style="width: 100%; height: 94%; overflow-y: scroll;position: absolute; z-index: 1;display: inline-block; background: hsla(0, 0%, 100%, 1);">
-						<div id="outerSkin" style="width: 100%; height: 100%; position: relative; z-index: 1;">
-							<div id="VSAbout" style="width: 2%; height: 100%; overflow: hidden;position: relative; z-index: 1;display: inline-block;"></div>
-							<div style="width: 96%; height: 100%; position: relative; z-index: 1;font-family: Source Sans Pro; display: inline-block;">
-								<div id="HSabout1" style="width: 100%; height: 2%; overflow: hidden;position: relative; z-index: 1;display: inline-block;"></div>
-								<div>
-									<font style="font-weight: bold; font-size: 1.5vmax;">Modeling the Spread and Control of COVID-19.<br/><br/></font>
-									<font style="font-weight: bold; font-size: 1.3vmax;">Agent Parameters<br/><br/></font>
-									<div style="width: 50%; height: 12%; overflow: hidden;position: relative; z-index: 1;display: inline-block; font-size: 0vmax;">
-										<div style="width: 50%; height: 100%; display: inline-block; overflow: hidden;">
-											<div style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; font-size: 1.1vmax;">
-												<div style="width: 80%;"><font style="font-weight: bold; font-size: 1.16vmax;">Age</font><br/>An integer
-													attribute sampled from a triangular distribution between 1 and 90 with a peak of 25.
-												</div>
-											</div>
-										</div>
-										<div style="width: 50%; height: 100%; display: inline-block;">
-											<object data="undraw/undraw_personal_notes_8n63.svg" type="image/svg+xml" style="width: 100%; height: 80%;"></object>
-										</div>
-									</div>
-									<div style="width: 50%; height: 12%; overflow: hidden;position: relative; z-index: 1;display: inline-block; font-size: 0vmax;">
-										<div style="width: 50%; height: 100%; display: inline-block; overflow: hidden;">
-											<div style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; font-size: 1.1vmax;">
-												<div style="width: 80%;"><font style="font-weight: bold; font-size: 1.16vmax;">Hygiene</font><br/>A value
-													between 0 and 1, where 1 corresponds to perfect hygiene. High hygiene level indicate
-													in real life washing hands, wearing masks etc., which leads to less exposure of
-													virus.
-												</div>
-											</div>
-										</div>
-										<div style="width: 50%; height: 100%; display: inline-block;">
-											<object data="undraw/undraw_wash_hands_nwl2.svg" type="image/svg+xml" style="width: 100%; height: 80%;"></object>
+			<div id="AboutBar" class="bars" style="width: 100%; height: 94%; overflow-y: scroll;position: absolute; z-index: 1;display: inline-block; background: hsla(0, 0%, 100%, 1); visibility: hidden;">
+				<div id="outerSkin" style="width: 100%; height: 100%; position: relative; z-index: 1;">
+					<div id="VSAbout" style="width: 2%; height: 100%; overflow: hidden;position: relative; z-index: 1;display: inline-block;"></div>
+					<div style="width: 96%; height: 100%; position: relative; z-index: 1;font-family: Source Sans Pro; display: inline-block;">
+						<div id="HSabout1" style="width: 100%; height: 2%; overflow: hidden;position: relative; z-index: 1;display: inline-block;"></div>
+						<div>
+							<font style="font-weight: bold; font-size: 1.5vmax;">Modeling the Spread and Control of COVID-19.<br/></font>
+							<font style="font-size: 1.2vmax;">
+								<p>
+									Social networks are complex. An individual impacts the society not only by her own independent behavior and choices, but also by her interactions. Therefore, within a society, there is an individual outcome, and a macro outcome for the society. These outcomes results from the combined effect of all the possible choices made by all the individuals. There are multiple attributes, reasons, choices and factors that impact the result of this interaction . The society is dynamic, evolving, learning and prone to making errors. One impacts the whole and the whole impacts one. Simplicity gives rise to complexity.
+								</p>
+								<p> 
+									For example, when a society is fighting with the spread of a disease, at an individual level - one’s health, immunity, hygiene level etc. impact the chance contracting the disease. At the same time, the number of people she come in contact with, and their hygiene level also matters at a collective societal level. Classical models of prediction are neither capable of embracing this complexity, nor are they suitable to factor in the adaptations that might result from such complexity. In such situations, Agent based models plays an important role in understanding the impact of both — an individual behavior and their interaction with the environment.
+								</p>
+								<p> 
+									Let’s understand an Agent. An agent is a software created entity, which represents or mimics an individual and their choices. These agent move around in a virtual space are heterogeneous and can differ in myriad ways (e.g., age, disease state, behavioral rules).[1] They are ‘autonomous’, i.e they make their choices independently. They can have attributes of an individual, i.e age, health etc. That is, they represent an individual within a software environment, complete with attributes, as well as decision making frameworks.
+								</p>
+								<br/>
+								<br/>
+					                    </font>
+							<font style="font-weight: bold; font-size: 1.3vmax;">Agent Parameters<br/><br/></font>
+							<div style="width: 50%; height: 16%; overflow: hidden;position: relative; z-index: 1;display: inline-block; font-size: 0vmax;">
+								<div style="width: 50%; height: 100%; display: inline-block; overflow: hidden;">
+									<div style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; font-size: 1.1vmax;">
+										<div style="width: 80%;"><font style="font-weight: bold; font-size: 1.16vmax;">Age</font><br/>Each agent has an attribute which represents age of an individual. This age is randomly sampled from a population distribution. We are using triangular distribution where the minimum age, maximum age and the peak of the distribution can be set according to the experiment. This allows to model different populations according to age.
 										</div>
 									</div>
-									<font style="font-size: 1.2vmax;"><br/></font>
-									<div style="width: 50%; height: 12%; overflow: hidden;position: relative; z-index: 1;display: inline-block; font-size: 0vmax;">
-										<div style="width: 50%; height: 100%; display: inline-block; overflow: hidden;">
-											<div style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; font-size: 1.1vmax;">
-												<div style="width: 80%;"><font style="font-weight: bold; font-size: 1.16vmax;">Overall health</font><br/>An integer value between 0 and 3, both inclusive. A higher value
-													corresponds to strong health and a lower value corresponds to poor health.
-												</div>
-											</div>
-										</div>
-										<div style="width: 50%; height: 80%; display: inline-block;">
-											<object data="undraw/undraw_yoga_248n.svg" type="image/svg+xml" style="width: 100%; height: 100%;"></object>
-										</div>
-									</div>
-									<div style="width: 50%; height: 12%; overflow: hidden;position: relative; z-index: 1;display: inline-block; font-size: 0vmax;">
-										<div style="width: 50%; height: 100%; display: inline-block; overflow: hidden;">
-											<div style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; font-size: 1.1vmax;">
-												<div style="width: 80%;"><font style="font-weight: bold; font-size: 1.16vmax;">Comorbidity</font><br/>An
-													integer value between 0 and 2, both inclusive. A co-morbidity value of zero
-													corresponds to an agent with no co-morbid conditions, and a lower value corresponds
-													to prevalence of more serious co-morbid conditions.
-												</div>
-											</div>
-										</div>
-										<div style="width: 50%; height: 80%; display: inline-block;">
-											<object data="undraw/undraw_doctor_kw5l.svg" type="image/svg+xml" style="width: 100%; height: 100%;"></object>
-										</div>
-									</div>
-									<font style="font-size: 1.2vmax;"><br/></font>
-									<div style="width: 50%; height: 12%; overflow: hidden;position: relative; z-index: 1;display: inline-block; font-size: 0vmax;">
-										<div style="width: 50%; height: 100%; display: inline-block; overflow: hidden;">
-											<div style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; font-size: 1.1vmax;">
-												<div style="width: 80%;"><font style="font-weight: bold; font-size: 1.16vmax;">Immunity </font><br/>A value of
-													either 0 or 1, where 0 corresponds to weak immunity and 1 corresponds to strong
-													immunity.
-												</div>
-											</div>
-										</div>
-										<div style="width: 50%; height: 80%; display: inline-block;">
-											<object data="undraw/undraw_Security_on_ff2u.svg" type="image/svg+xml" style="width: 100%; height: 100%;"></object>
-										</div>
-									</div>
-									<font style="font-size: 1.2vmax;"><br/><br/><br/><br/></font>
-									<div style="width: 100%; height: 30%; overflow: hidden;position: relative; z-index: 1;display: inline-block; font-size: 0vmax;">
-										<div style="width:100%; height: 100%; display: inline-block; overflow: hidden;">
-											<div style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; font-size: 1.1vmax;">
-												<div style="width: 80%;">
-													<iframe style="width: 100%; height: 100%" src="https://www.youtube.com/embed/yLqTdtJ_lQk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-												</div>
-											</div>
-										</div>
-									</div>
-									<font style="font-size: 1.2vmax;"><br/><br/><br/><br/></font>
-									<font style="font-weight: bold; font-size: 1.3vmax;">Policies<br/></font>
-									<font style="font-size: 1.2vmax;">
-										Many policies can be applied at any time during the simulation. These policies change and
-										control agent behavior and also update environmental resources.<br/><br/>
-									</font>
-									<font style="font-size: 1.16vmax; font-weight: bold;">Border Close<br/></font>
-									<font style="font-size: 1.1vmax;">
-										This policy is applied to stop the incoming infectious agents in the environment.<br/><br/>
-									</font>
-									<font style="font-size: 1.16vmax; font-weight: bold;">Lockdown <br/></font>
-									<font style="font-size: 1.1vmax;">
-										Lockdown is applied to control the movement of the agents in the simulation. When applied it can
-										make some agents static in the environment.<br/><br/>
-									</font>
-									<font style="font-size: 1.16vmax; font-weight: bold;">Age Based Lockdown<br/></font>
-									<font style="font-size: 1.1vmax;">
-										This lockdown is applied with a threshold age. All the agents above the threshold will be under
-										lockdown.<br/><br/>
-									</font>
-									<font style="font-size: 1.16vmax; font-weight: bold;">Quarantine <br/></font>
-									<font style="font-size: 1.1vmax;">
-										This policy, if applied -- can remove certain agents from the environment. Sick and positively
-										tested agents can be quarantined.<br/><br/>
-									</font>
-									<font style="font-size: 1.16vmax; font-weight: bold;">Daily Testing<br/></font>
-									<font style="font-size: 1.1vmax;">
-										When this policy is applied -- Daily, a random number of agents are being sampled and tested.
-										There are parameters which can be modified to control capacity of daily testing and false
-										negative percentage of test results.<br/><br/>
-									</font>
-									<font style="font-size: 1.16vmax; font-weight: bold;">Contact Tracing <br/></font>
-									<font style="font-size: 1.1vmax;">
-										This policy trace back to a certain number of contacts of an agent when it is tested positive.
-										If Quarantine is also invoked, the traced agents will be isolated from the
-										environment.<br/><br/>
-									</font>
-									<font style="font-size: 1.16vmax; font-weight: bold;">Social Distancing<br/></font>
-									<font style="font-size: 1.1vmax;">
-										This policy when applied -- It controls how close any one agent come to another one.<br/><br/>
-									</font>
-									<font style="font-size: 1.16vmax; font-weight: bold;">Hospitalization <br/></font>
-									<font style="font-size: 1.1vmax;">
-										If this policy is invoked, very sick agents goes gets isolated and moved to hospital environment
-										subject to availability of hospital beds.<br/><br/>
-									</font>
-									<font style="font-size: 1.16vmax; font-weight: bold;">Reinforcement<br/></font>
-									<font style="font-size: 1.1vmax;">
-										Hospital beds and ICU beds can be always modified during the simulation.<br/><br/><br/><br/>
-									</font>
-
-
+								</div>
+								<div style="width: 50%; height: 100%; display: inline-block;">
+									<object data="undraw/undraw_personal_notes_8n63.svg" type="image/svg+xml" style="width: 100%; height: 80%;"></object>
 								</div>
 							</div>
+							<div style="width: 50%; height: 16%; overflow: hidden;position: relative; z-index: 1;display: inline-block; font-size: 0vmax;">
+								<div style="width: 50%; height: 100%; display: inline-block; overflow: hidden;">
+									<div style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; font-size: 1.1vmax;">
+										<div style="width: 80%;"><font style="font-weight: bold; font-size: 1.16vmax;">Hygiene</font><br/>Hygiene refers to conditions and practices that help to maintain health and prevent the spread of diseases. This is a sum total of personal, medical, culinary, home & everyday hygiene observed by a society. It is randomly distributed and an agent is assigned a random value between 0(Lowest level of hygiene) to 1(Highest level of hygiene). The distribution parameters can between
+										</div>
+									</div>
+								</div>
+								<div style="width: 50%; height: 100%; display: inline-block;">
+									<object data="undraw/undraw_wash_hands_nwl2.svg" type="image/svg+xml" style="width: 100%; height: 80%;"></object>
+								</div>
+							</div>
+							<font style="font-size: 1.2vmax;"><br/></font>
+							<div style="width: 50%; height: 16%; overflow: hidden;position: relative; z-index: 1;display: inline-block; font-size: 0vmax;">
+								<div style="width: 50%; height: 100%; display: inline-block; overflow: hidden;">
+									<div style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; font-size: 1.1vmax;">
+										<div style="width: 80%;"><font style="font-weight: bold; font-size: 1.16vmax;">Overall health</font><br/>For this modeling, health is defined as a state of ‘physical well-being’. It has been divided into 4 levels(Between 0 &3), with each level representing a particular state of health. On this scale ‘3’ represents peak health condition, being free from any disease and ‘0’ represents poor health condition. An agent is randomly assigned a number between 0 to 3.
+ 
+										</div>
+									</div>
+								</div>
+								<div style="width: 50%; height: 80%; display: inline-block;">
+									<object data="undraw/undraw_yoga_248n.svg" type="image/svg+xml" style="width: 100%; height: 100%;"></object>
+								</div>
+							</div>
+							<div style="width: 50%; height: 16%; overflow: hidden;position: relative; z-index: 1;display: inline-block; font-size: 0vmax;">
+								<div style="width: 50%; height: 100%; display: inline-block; overflow: hidden;">
+									<div style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; font-size: 1.1vmax;">
+										<div style="width: 80%;"><font style="font-weight: bold; font-size: 1.16vmax;">Comorbidity</font><br/>Comorbidity refers to one or more diseases or conditions that occur along with another condition in the same person at the same time. For the experiment, they have been assigned 3 levels 0 and -2, both inclusive. A co-morbidity value of zero corresponds to an agent with no co-morbid conditions, and a lower value corresponds to prevalence of more serious co-morbid conditions.
+										</div>
+									</div>
+								</div>
+								<div style="width: 50%; height: 80%; display: inline-block;">
+									<object data="undraw/undraw_doctor_kw5l.svg" type="image/svg+xml" style="width: 100%; height: 100%;"></object>
+								</div>
+							</div>
+							<font style="font-size: 1.2vmax;"><br/></font>
+							<div style="width: 50%; height: 16%; overflow: hidden;position: relative; z-index: 1;display: inline-block; font-size: 0vmax;">
+								<div style="width: 50%; height: 100%; display: inline-block; overflow: hidden;">
+									<div style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; font-size: 1.1vmax;">
+										<div style="width: 80%;"><font style="font-weight: bold; font-size: 1.16vmax;">Immunity </font><br/>It is defined as the capability of body to fight foreign infections. It has been assigned value of either 0 or 1, where 0 represent an immunosuppressed individual and 1 represent perfectly normal state of immunity.
+										</div>
+									</div>
+								</div>
+								<div style="width: 50%; height: 80%; display: inline-block;">
+									<object data="undraw/undraw_Security_on_ff2u.svg" type="image/svg+xml" style="width: 100%; height: 100%;"></object>
+								</div>
+							</div>
+							<font style="font-size: 1.2vmax;"><br/><br/><br/><br/></font>
+							<font style="font-weight: bold; font-size: 2.16vmax;">Policies<br/><br/></font>
+							<font style="font-size: 1.2vmax;"> 
+								Many policies can be applied for a period of time of the total simulation run. These policies change and control agent behavior. Some policies also have dynamic parameters which can be set for a specific period of time. These policies are also used to update the environmental resources..<br/><br/>
+							</font>
+							<br/><br/>
+
+							<font style="font-size: 1.6vmax; font-weight: bold;">Lockdown <br/></font>
+							<font style="font-size: 1.2vmax;">
+								<p>
+									A lockdown is an emergency protocol that prevents people from leaving a given area. In this simulation, the lockdown controls the movement of the agents by making them static. It is dynamic policy parameter and can be applied for varying number of days , at varying intervals and at number of times.
+								</p>
+								<p>
+									For example a lockdown could be applied from 10th day to 30th day, followed by a relaxation till 35th day. The second lockdown could be applied from 35th day to 60th day.During lockdown only essential agents are permitted to move. This percentage of essential workers could be assigned as an initial parameter before any experiment
+								</p>
+								<br/><br/>
+							</font>
+							<font style="font-size: 1.6vmax; font-weight: bold;">Age Based Lockdown<br/></font>
+							<font style="font-size: 1.2vmax;">
+								<p>
+									It is a lockdown defined on the basis of the age of an agent. This age is known as the ‘threshold age’. All the agents below threshold age are permitted to move, and all the agents above threshold age become static. It can be dynamically defined on the age-based lockdown timeline.
+								</p>
+								<p>
+									For example, Age based lockdown can be implemented on Day 50, with threshold age of 65. This means, agents below the age of 65 can interact and move, while agents above the age of 65 are static & under lockdown.
+								</p>
+								<br/><br/>
+							</font>
+							<font style="font-size: 1.6vmax; font-weight: bold;">Hospitalization<br/></font>
+							<font style="font-size: 1.2vmax;">
+								<p>
+									It is defined as the special policy in which special protocols(patient isolation, safety measures etc) are implemented in treating the affected agents. At the implementation, it isolates the agents (from the environment) that get very sick and have occupied a hospital bed.
+								</p>
+								<p>
+									This policy is different from the general hospitalization, as invoking this policy would be proceeded by special treatment protocols specific for the pandemic. These hospitalized agents don’t interact with other agents in the system. Hospitalization of an agent is also subject to availability of the hospital bed. We can define start date and duration of hospitalization policy. We can also set the number of hospital and ICU beds in the simulation environment (set as initial parameter).
+								</p>
+								<br/><br/>
+							</font>
+							<font style="font-size: 1.6vmax; font-weight: bold;">Social Distancing <br/></font>
+							<font style="font-size: 1.2vmax;">
+								<p> 
+									Designed to replicate the ‘physical’ social distancing intervention, this policy controls the movement of agents by maintaining a minimum distance between the agents. This allows agents to stay outside the infection radius of other agents. Social Distancing Efficiency is defined as the success rate of practicing Social Distancing measures.
+								</p>
+								<p>
+									For example, let’s say social distancing is defined as keeping a minimum distance of 6 ft from another individual(agent). If we have 100 agents with minimum 100 interactions, this will have 100,000 opportunities of practicing social distancing. If a minimum distance of 6ft was maintained in at-least 70,000 of these interactions, we will have a 70% Social Distancing Efficiency for the environment.
+								</p>
+								<br/><br/>
+							</font>
+							<font style="font-size: 1.6vmax; font-weight: bold;">Border Close <br/></font>
+							<font style="font-size: 1.2vmax;"><p>In real life, closing the border refers to closing the airports and other means of transportation across states or countries to control the movement of individuals. Before the closure of border, there may be free movement of individuals, who may or may not be infectious. </p> <p> This is simulated in the similar manner in the model, where everyday, a random number of ‘infectious traveler‘ agents enter the environment before the ‘border close’ policy is implemented. Post policy implementation, the inflow of new infectious ‘traveler agents’ to the environment is completely stopped. </p> <br/><br/>
+							</font>
+
+							<font style="font-size: 1.6vmax; font-weight: bold;">Daily Testing <br/></font>
+							<font style="font-size: 1.2vmax;"> <p> Testing for a disease is very critical in identifying the rate and spread of the disease. This parameter provides essential actionable insights to the governments agencies for understanding the spread, severity, attributes, demographics as well as infection, recovery and death rate . At the same time, help in crafting the response best suited for the dynamically evolving situation. </p> <p> When this policy is applied in the simulation , random agents are sampled from the environment and tested as per the defined testing capacity . This capacity can be dynamically set at various levels during the application of policy. Accuracy of each test result is also critical. We can set the efficiency in the initial parameters which indicate the false negative(individuals who are infected, but their results show they are not infected) percentage of the tests. </p> <br/><br/>
+							</font>
+
+							<font style="font-size: 1.6vmax; font-weight: bold;">Contact Tracing <br/></font>
+							<font style="font-size: 1.2vmax;"> <p> It is the process of identification of persons who may have come into contact with an infected person ("contacts") and subsequent collection of further information about these contacts.</p> <p> Modeling this, when an agent is tested positive, it traces back certain number of contacts of the agent it had come in contact with earlier. The number of contacts to be traced can be set in the initial parameters. </p> <br/><br/></font>
+
+							<font style="font-size: 1.6vmax; font-weight: bold;">Quarantine <br/></font>
+							<font style="font-size: 1.2vmax;"> <p> It is defined as restricting the movement of individuals with certain attributes(like exposure to virus) for a given time period to prevent the spread of disease. Upon it’s application, the policy removes the affected agents (positively tested) from the environment for a given time period( till recovery or mandatory 21 days) and re-introduces them(post recovery or mandatory isolation) into the environment. </p> <br/><br/>
+							</font>
+
+							<font style="font-size: 1.6vmax; font-weight: bold;">Reinforcement<br/></font>
+							<font style="font-size: 1.2vmax;"> <p> In the possible event of shortfall of present healthcare capacity, governments agencies may need to add reinforcements of makeshift hospitals and critical care units. In this scenario, the questions, such as - “How many of such hospital beds to be prepared?” and “When do we need certain number of hospitals beds?” etc. become very critical. With this policy, we can set the amount of reinforcements to be added to the existing capacity of hospital beds and ICU beds. We can define the initial capacity in the initial parameters. </p> <p> This would help in understanding if capacity & the timing of reinforcements would be sufficient to handle the upcoming situation. For example, Is adding 100 additional ICUs & 500 hospital beds on 30th day would be sufficient? </p>
+								<br/><br/><br/><br/>
+							</font>
+
+							<font style="font-size: 1.6vmax; font-weight: bold;">Other Visualizations<br/></font>
+							<font style="font-size: 1.2vmax;"> <p>Here's a Agent Based Model visualization based on a 3Blue1Brown video. </p>
+							 	<a href="https://prajwalsouza.github.io/Experiments/Epidemic-Simulation"> https://prajwalsouza.github.io/Experiments/Epidemic-Simulation</a>
+								<br/><br/><br/>
+							</font>
+
+
 						</div>
+					</div>
+				</div>
 			</div>
-			<div id="PublicationBar" style="width: 100%; height: 94%; overflow: hidden;position: absolute; z-index: 1;display: inline-block; background: hsla(0, 0%, 92%, 1);">
+			<div id="PublicationBar" class="bars" style="width: 100%; height: 94%; overflow: hidden;position: absolute; z-index: 1;display: inline-block; background: hsla(0, 0%, 92%, 1); visibility: hidden;">
 				<font style="font-size: 1.2vmax; font-family: Source Sans Pro;">
 					<br/>&nbsp&nbsp&nbsp&nbspLink to the paper will be available soon. 
 				</font>
 			</div>
-			<div id="VideosBar" style="width: 100%; height: 94%; overflow: hidden;position: absolute; z-index: 1;display: inline-block; background: hsla(0, 0%, 92%, 1);">
+			<div id="VideosBar" class="bars" style="width: 100%; height: 94%; overflow: hidden;position: absolute; z-index: 1;display: inline-block; background: hsla(0, 0%, 100%, 1);visibility: hidden;">
+				<div id="outerSkinvideo" style="width: 100%; height: 100%; position: relative; z-index: 1;">
+					<div id="VSvideo" style="width: 15%; height: 100%; overflow: hidden;position: relative; z-index: 1;display: inline-block;"></div>
+					<div style="width: 70%; height: 100%; position: relative; z-index: 1;font-family: Source Sans Pro; display: inline-block; overflow: hidden;">
+						<div id="HSvideo1" style="width: 100%; height: 2%; overflow: hidden;position: relative; z-index: 1;display: inline-block;"></div>
+						<div style="text-align: center;">
+							<font style="font-weight: bold; font-size: 1.8vmax; ">Videos<br/></font>
+							<font style="font-size: 1.2vmax;"><br/></font>
+							<font style="font-weight: bold; font-size: 1.4vmax; color: grey;">What may happen after Lockdown?<br/><br/></font>
+						</div>
+						<div style="width: 100%; height: 30%;">
+							<iframe width="100%" height="100%" src="https://www.youtube.com/embed/mxiS280gDrk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						</div>
+
+						<div style="text-align: center;">
+							<font style="font-size: 1.2vmax;"><br/><br/></font>
+							<font style="font-weight: bold; font-size: 1.4vmax; color: grey;">Why Overreaction Is Valid For COVID-19.<br/><br/></font>
+						</div>
+						<div style="width: 100%; height: 30%;">
+							<iframe width="100%" height="100%" src="https://www.youtube.com/embed/yLqTdtJ_lQk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="SimsBar" class="bars" style="width: 100%; height: 94%; overflow: hidden;position: absolute; z-index: 1;display: inline-block; background: hsla(0, 0%, 92%, 1);visibility: hidden;">
 
 			</div>
-			<div id="SimsBar" style="width: 100%; height: 94%; overflow: hidden;position: absolute; z-index: 1;display: inline-block; background: hsla(0, 0%, 92%, 1);">
+			<div id="TeamBar" class="bars" style="width: 100%; height: 94%; overflow-y: scroll;position: absolute; z-index: 1;display: inline-block; background: hsla(0, 0%, 100%, 1);visibility: hidden;">
+				<div id="outerSkinTeam" style="width: 100%; height: 100%; position: relative; z-index: 1;">
+					<div id="VSTeam" style="width: 2%; height: 100%; overflow: hidden;position: relative; z-index: 1;display: inline-block;"></div>
+					<div style="width: 96%; height: 100%; position: relative; z-index: 1;font-family: Source Sans Pro; display: inline-block;">
+						<div id="HSteam1" style="width: 100%; height: 2%; overflow: hidden;position: relative; z-index: 1;display: inline-block;"></div>
+						<div style="text-align: center;">
+							<font style="font-weight: bold; font-size: 1.8vmax; ">Team<br/></font>
+							<font style="font-size: 1.2vmax;"><br/></font>
+							<font style="font-weight: bold; font-size: 1.4vmax; color: grey;">Modeling and Simulation<br/><br/></font>
+						</div>
+						<div style="width: 100%; height: 25%; position: relative; z-index: 1;display: inline-block; overflow: hidden;">
+							<div id="VSTeam01" style="width: 2%; height: 100%; overflow: hidden;position: relative; z-index: 1;display: inline-block;"></div>
+							<div style="width: 96%; height: 100%; position: relative; z-index: 1;font-family: Source Sans Pro; display: inline-block; overflow: hidden;" onmouseover="document.getElementById('imageHA01').style.filter = 'none'" onmouseout="document.getElementById('imageHA01').style.filter = 'grayscale(100%)'">
+								<div id="HSteamA01" style="width: 98%; height: 2%; overflow: hidden;position: relative; z-index: 1;display: inline-block;"></div>
+								<div id="imageHA01"style="width: 25%; height: 90%; overflow: hidden;position: relative; z-index: 1;display: inline-block; border-radius: 20px;  background-size: cover; background-position: center; background-image: url('team/ashuthosh.jpeg'); transition: filter 0.5s; filter: grayscale(100%);">
+								</div>
+								<div id="discHA01" style="width: 75%; height: 90%; overflow: hidden;position: relative; z-index: 1;display: inline-block; border-radius: 20px;">
+									<div id="VSTeamDiscA01" style="width: 7%; height: 100%; overflow: hidden;position: relative; z-index: 1;display: inline-block;"></div>
+									<div style="width: 80%; height: 100%; position: relative; z-index: 1;font-family: Source Sans Pro; display: inline-block; overflow: hidden;">
+										<div style="width: 100%; height: 10%"></div>
+										<div id="TeamNameHA01" style="width: 100%; height: 15%; overflow: hidden;position: relative; z-index: 1;display: inline-block;">
+											<font style="font-size: 1.5vmax; text-align: center; font-weight: bold;">ASHUTHOSH TRIVEDI<br/></font>
+										</div>
+										<div id="TeamDiscHA01" style="width: 100%; height: 60%; overflow: hidden;position: relative; z-index: 1;display: inline-block;">
+											<font style="font-size: 1.1vmax; text-align: center;">Ashutosh Trivedi is a Computer Scientist and Entrepreneur. He received his masters in computer science from IIIT-Bangalore, a graduate school of information technology in Bangalore, India in 2015. Ashutosh is co-founder of San Fransisco based startup <a href="https://www.spext.co/" style="text-decoration: none; color: hsla(200, 100%, 50%, 1);" target="_blank">Spext</a>. He wants to change the way people interact and consume audio content. Spext is part of UC Berkeley’s startup program - Skydeck and Creative Destruction Labs in Canada. As an independent researcher, Ashutosh is interested in Artificial Intelligence, Multi-agent simulations and Mathematics. He likes thinking about science, spirituality and human nature and often goes to trek Himalayan trails.<br/><br/><br/></font>
 
-			</div>
-			<div id="TeamBar" style="width: 100%; height: 94%; overflow: hidden;position: absolute; z-index: 1;display: inline-block; background: hsla(0, 0%, 92%, 1);">
+											<font style="font-size: 1.1vmax; text-align: center;"><i class="im im-linkedin" style="color: rgb(14, 118, 168); cursor: pointer;" onclick="window.open('https://www.linkedin.com/in/ashutoshtrivedi/')"></i>&nbsp&nbsp&nbsp&nbsp<i class="im im-twitter" style="color: rgb(0, 172, 238); cursor: pointer;" onclick="window.open('https://twitter.com/ashu_trv')"></i>&nbsp&nbsp&nbsp&nbsp<a href="mailto:name@email.com" style="text-decoration: none;"><i class="im im-mail" style="color: #D44638;"></i><br/><font style="color: purple;">ashu.trv@gmail.com</font></a></font>
+										</div>
 
+									</div>
+								</div>
+							</div>
+						</div>
+						<div style="width: 100%; height: 25%; position: relative; z-index: 1;display: inline-block; overflow: hidden;">
+							<div id="VSTeam02" style="width: 2%; height: 100%; overflow: hidden;position: relative; z-index: 1;display: inline-block;"></div>
+							<div style="width: 96%; height: 100%; position: relative; z-index: 1;font-family: Source Sans Pro; display: inline-block; overflow: hidden;" onmouseover="document.getElementById('imageHA02').style.filter = 'none'" onmouseout="document.getElementById('imageHA02').style.filter = 'grayscale(100%)'">
+								<div id="HSteamA02" style="width: 98%; height: 2%; overflow: hidden;position: relative; z-index: 1;display: inline-block;"></div>
+								<div id="imageHA02"style="width: 25%; height: 90%; overflow: hidden;position: relative; z-index: 1;display: inline-block; border-radius: 20px;  background-size: cover; background-position: center; background-image: url('team/nandakishore.jpeg'); transition: filter 0.5s; filter: grayscale(100%);">
+								</div>
+								<div id="discHA02" style="width: 75%; height: 90%; overflow: hidden;position: relative; z-index: 1;display: inline-block; border-radius: 20px;">
+									<div id="VSTeamDiscA02" style="width: 7%; height: 100%; overflow: hidden;position: relative; z-index: 1;display: inline-block;"></div>
+									<div style="width: 80%; height: 100%; position: relative; z-index: 1;font-family: Source Sans Pro; display: inline-block; overflow: hidden;">
+										<div style="width: 100%; height: 10%"></div>
+										<div id="TeamNameHA02" style="width: 100%; height: 16%; overflow: hidden;position: relative; z-index: 1;display: inline-block;">
+											<font style="font-size: 1.5vmax; text-align: center; font-weight: bold;">NANDA KISHORE SREENIVAS<br/></font>
+										</div>
+										<div id="TeamDiscHA02" style="width: 100%; height: 60%; overflow: hidden;position: relative; z-index: 1;display: inline-block;">
+											<font style="font-size: 1.1vmax; text-align: center;">Nanda Kishore is an independent AI researcher and a software engineer by profession. He graduated with a B. Tech. in computer science and engineering from NIT-Trichy, India. He is currently working with Oracle as an Applications Engineer in Bangalore. His research interests are broadly in the area of artificial intelligence and multi-agent systems. He is also interested in building computational models towards a better understanding of human behavior, decision-making, and social interactions.<br/><br/><br/></font>
+
+											<font style="font-size: 1.1vmax; text-align: center;"><i class="im im-linkedin" style="color: rgb(14, 118, 168); cursor: pointer;" onclick="window.open('https://www.linkedin.com/in/nandakishore-s/')"></i></font>		
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div style="width: 100%; height: 25%; position: relative; z-index: 1;display: inline-block; overflow: hidden;">
+							<div id="VSTeam03" style="width: 2%; height: 100%; overflow: hidden;position: relative; z-index: 1;display: inline-block;"></div>
+							<div style="width: 96%; height: 100%; position: relative; z-index: 1;font-family: Source Sans Pro; display: inline-block; overflow: hidden;" onmouseover="document.getElementById('imageHA03').style.filter = 'none'" onmouseout="document.getElementById('imageHA03').style.filter = 'grayscale(100%)'">
+								<div id="HSteamA03" style="width: 98%; height: 2%; overflow: hidden;position: relative; z-index: 1;display: inline-block;"></div>
+								<div id="imageHA03"style="width: 25%; height: 90%; overflow: hidden;position: relative; z-index: 1;display: inline-block; border-radius: 20px;  background-size: cover; background-position: center; background-image: url('team/shrisha.jpeg'); transition: filter 0.5s; filter: grayscale(100%);">
+								</div>
+								<div id="discHA03" style="width: 75%; height: 90%; overflow: hidden;position: relative; z-index: 1;display: inline-block; border-radius: 20px;">
+									<div id="VSTeamDiscA03" style="width: 7%; height: 100%; overflow: hidden;position: relative; z-index: 1;display: inline-block;"></div>
+									<div style="width: 80%; height: 100%; position: relative; z-index: 1;font-family: Source Sans Pro; display: inline-block; overflow: hidden;">
+										<div style="width: 100%; height: 2%"></div>
+										<div id="TeamNameHA03" style="width: 100%; height: 15%; overflow: hidden;position: relative; z-index: 1;display: inline-block;">
+											<font style="font-size: 1.5vmax; text-align: center; font-weight: bold;">SHRISHA RAO<br/></font>
+										</div>
+										<div id="TeamDiscHA03" style="width: 100%; height: 80%; overflow: hidden;position: relative; z-index: 1;display: inline-block;">
+											<font style="font-size: 1.1vmax; text-align: center;">Shrisha Rao received his Ph.D. in computer science from the University of Iowa, and before that his M.S. in logic and computation from Carnegie Mellon University. He is a professor at IIIT-Bangalore, a graduate school of information technology in Bangalore, India. Dr. Rao is an ACM Distinguished Speaker and a Senior Member of the IEEE. He is also a life member of the American Mathematical Society and the Computer Society of India. <br/>
+											His primary research interests are in artificial intelligence and other applications of distributed computing, including in bioinformatics and computational biology, as well as algorithms and approaches for resource management in complex systems such as used in cloud computing. He also has interests in energy efficiency, computational sustainability, renewable energy and microgrids, applied mathematics, and intelligent transportation systems. Dr. Rao has been a reviewer for many journals/transactions of the IEEE and ACM, and has served as a program committee member and keynote speaker for several international conferences. He is also a regular reviewer, with over 90 published reviews, for the ACM Computing Reviews journal (computingreviews.com), which reviews a sample of the latest publications related to the computing sciences.<br/><br/></font>
+
+											<font style="font-size: 1.1vmax; text-align: center;"><i class="im im-linkedin" style="color: rgb(14, 118, 168); cursor: pointer;" onclick="window.open('https://www.linkedin.com/in/shrao/')"></i>&nbsp&nbsp&nbsp&nbsp<i class="im im-twitter" style="color: rgb(0, 172, 238); cursor: pointer;" onclick="window.open('https://twitter.com/shrao')"></i></font>
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</div>
+						<div style="text-align: center;">
+							<font style="font-weight: bold; font-size: 1.4vmax; color: grey; text-align:"><br/><br/><br/>Visualizations<br/><br/></font>
+						</div>
+						<div style="width: 100%; height: 25%; position: relative; z-index: 1;display: inline-block; overflow: hidden;">
+							<div id="VSTeam04" style="width: 2%; height: 100%; overflow: hidden;position: relative; z-index: 1;display: inline-block;"></div>
+							<div style="width: 96%; height: 100%; position: relative; z-index: 1;font-family: Source Sans Pro; display: inline-block; overflow: hidden;" onmouseover="document.getElementById('imageHA04').style.filter = 'none'" onmouseout="document.getElementById('imageHA04').style.filter = 'grayscale(100%)'">
+								<div id="HSteamA04" style="width: 98%; height: 2%; overflow: hidden;position: relative; z-index: 1;display: inline-block;"></div>
+								<div id="imageHA04"style="width: 25%; height: 90%; overflow: hidden;position: relative; z-index: 1;display: inline-block; border-radius: 20px;  background-size: cover; background-position: center; background-image: url('team/prajwal.jpg'); transition: filter 0.5s; filter: grayscale(100%);">
+								</div>
+								<div id="discHA04" style="width: 75%; height: 90%; overflow: hidden;position: relative; z-index: 1;display: inline-block; border-radius: 20px;">
+									<div id="VSTeamDiscA04" style="width: 7%; height: 100%; overflow: hidden;position: relative; z-index: 1;display: inline-block;"></div>
+									<div style="width: 80%; height: 100%; position: relative; z-index: 1;font-family: Source Sans Pro; display: inline-block; overflow: hidden;">
+										<div style="width: 100%; height: 10%"></div>
+										<div id="TeamNameHA04" style="width: 100%; height: 15%; overflow: hidden;position: relative; z-index: 1;display: inline-block;">
+											<font style="font-size: 1.5vmax; text-align: center; font-weight: bold;">PRAJWAL DSOUZA<br/></font>
+										</div>
+										<div id="TeamDiscHA04" style="width: 100%; height: 60%; overflow: hidden;position: relative; z-index: 1;display: inline-block;">
+											<font style="font-size: 1.1vmax; text-align: center;">Prajwal DSouza is a Teacher at Centre for Advanced Learning, Mangalore. He recieved his masters degree in Physics from Mangalore University. His interests currently include creating web simulations, machine learning applications in basic sciences (particularly physics and biology). <br/><br/><br/></font>
+
+											<font style="font-size: 1.1vmax; text-align: center;"><i class="im im-globe" style="cursor: pointer;" onclick="window.open('https://prajwalsouza.github.io/')"></i>&nbsp&nbsp&nbsp&nbsp<i class="im im-github" style="cursor: pointer;" onclick="window.open('https://github.com/prajwalsouza')"></i>&nbsp&nbsp&nbsp&nbsp<i class="im im-linkedin" style="color: rgb(14, 118, 168); cursor: pointer;" onclick="window.open('https://www.linkedin.com/in/prajwal-dsouza')"></i>&nbsp&nbsp&nbsp&nbsp<i class="im im-twitter" style="color: rgb(0, 172, 238); cursor: pointer;" onclick="window.open('https://twitter.com/prajwalsouza1')"></i></font>
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</div>
+						<div style="text-align: center;">
+							<font style="font-weight: bold; font-size: 1.4vmax; color: grey; text-align:"><br/><br/><br/>Contributors<br/><br/></font>
+						</div>
+						<div style="width: 100%; height: 25%; position: relative; z-index: 1;display: inline-block; overflow: hidden;">
+							<div id="VSTeam05" style="width: 2%; height: 100%; overflow: hidden;position: relative; z-index: 1;display: inline-block;"></div>
+							<div style="width: 96%; height: 100%; position: relative; z-index: 1;font-family: Source Sans Pro; display: inline-block; overflow: hidden;" onmouseover="document.getElementById('imageHA05').style.filter = 'none'" onmouseout="document.getElementById('imageHA05').style.filter = 'grayscale(100%)'">
+								<div id="HSteamA05" style="width: 98%; height: 2%; overflow: hidden;position: relative; z-index: 1;display: inline-block;"></div>
+								<div id="imageHA05"style="width: 25%; height: 90%; overflow: hidden;position: relative; z-index: 1;display: inline-block; border-radius: 20px;  background-size: cover; background-position: center; background-image: url('team/sanyam.jpg'); transition: filter 0.5s; filter: grayscale(100%);">
+								</div>
+								<div id="discHA05" style="width: 75%; height: 90%; overflow: hidden;position: relative; z-index: 1;display: inline-block; border-radius: 20px;">
+									<div id="VSTeamDiscA05" style="width: 7%; height: 100%; overflow: hidden;position: relative; z-index: 1;display: inline-block;"></div>
+									<div style="width: 80%; height: 100%; position: relative; z-index: 1;font-family: Source Sans Pro; display: inline-block; overflow: hidden;">
+										<div style="width: 100%; height: 10%"></div>
+										<div id="TeamNameHA05" style="width: 100%; height: 15%; overflow: hidden;position: relative; z-index: 1;display: inline-block;">
+											<font style="font-size: 1.5vmax; text-align: center; font-weight: bold;">SANYAM JAIN<br/></font>
+										</div>
+										<div id="TeamDiscHA05" style="width: 100%; height: 60%; overflow: hidden;position: relative; z-index: 1;display: inline-block;">
+											<font style="font-size: 1.1vmax; text-align: center;">Sanyam is a graduate of IIIT-Bangalore. He is a senior Product Engineer at Spext and an active open source contributor.<br/><br/><br/></font>
+
+											<font style="font-size: 1.1vmax; text-align: center;"><i class="im im-linkedin" style="color: rgb(14, 118, 168); cursor: pointer;" onclick="window.open('https://www.linkedin.com/in/sjain20/')"></i>&nbsp&nbsp&nbsp&nbsp<i class="im im-github" style="cursor: pointer;" onclick="window.open('https://github.com/xerosanyam')"></i>&nbsp&nbsp&nbsp&nbsp<i class="im im-twitter" style="color: rgb(0, 172, 238); cursor: pointer;" onclick="window.open('https://twitter.com/xerosanyam')"></i></font>
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</div>
+						<div style="width: 100%; height: 25%; position: relative; z-index: 1;display: inline-block; overflow: hidden;">
+							<div id="VSTeam06" style="width: 2%; height: 100%; overflow: hidden;position: relative; z-index: 1;display: inline-block;"></div>
+							<div style="width: 96%; height: 100%; position: relative; z-index: 1;font-family: Source Sans Pro; display: inline-block; overflow: hidden;" onmouseover="document.getElementById('imageHA06').style.filter = 'none'" onmouseout="document.getElementById('imageHA06').style.filter = 'grayscale(100%)'">
+								<div id="HSteamA06" style="width: 98%; height: 2%; overflow: hidden;position: relative; z-index: 1;display: inline-block;"></div>
+								<div id="imageHA06"style="width: 25%; height: 90%; overflow: hidden;position: relative; z-index: 1;display: inline-block; border-radius: 20px;  background-size: cover; background-position: center; background-image: url('team/gunjan.png'); transition: filter 0.5s; filter: grayscale(100%);">
+								</div>
+								<div id="discHA06" style="width: 75%; height: 90%; overflow: hidden;position: relative; z-index: 1;display: inline-block; border-radius: 20px;">
+									<div id="VSTeamDiscA06" style="width: 7%; height: 100%; overflow: hidden;position: relative; z-index: 1;display: inline-block;"></div>
+									<div style="width: 80%; height: 100%; position: relative; z-index: 1;font-family: Source Sans Pro; display: inline-block; overflow: hidden;">
+										<div style="width: 100%; height: 10%"></div>
+										<div id="TeamNameHA06" style="width: 100%; height: 15%; overflow: hidden;position: relative; z-index: 1;display: inline-block;">
+											<font style="font-size: 1.5vmax; text-align: center; font-weight: bold;">GUNJAN WADHWA<br/></font>
+										</div>
+										<div id="TeamDiscHA06" style="width: 100%; height: 60%; overflow: hidden;position: relative; z-index: 1;display: inline-block;">
+											<font style="font-size: 1.1vmax; text-align: center;">Gunjan is a product manager and consultant. She has been involved in many volunteering works related to mental health and disaster relief. <br/><br/><br/></font>
+
+											<font style="font-size: 1.1vmax; text-align: center;"><i class="im im-linkedin" style="color: rgb(14, 118, 168); cursor: pointer;" onclick="window.open('https://www.linkedin.com/in/gunjan-wadhwa-5746316b/')"></i></font>
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</div>
+						<div style="text-align: center;">
+							<font style="font-weight: bold; font-size: 1.4vmax; color: grey; text-align: center;"><br/><br/><br/>Sponsers<br/></font>
+							<font style="font-weight: bold; font-size: 1.2vmax; color: grey; text-align: center; cursor: pointer;" onclick="window.open('https://publish.spext.co')"><br/>Spext<br/></font>
+						</div>
+						<div style="width: 100%; height: 6%; display: inline-block; font-size: 0; cursor: pointer;" onclick="window.open('https://publish.spext.co')">
+							<div style="width: 100%; height: 100%; display: flex; justify-content: center;"><img src="team/spext.png" style="max-width: 100%; max-height: 100%;"></div>
+							
+						</div>
+						<div style="text-align: center;">
+							<font style="font-weight: bold; font-size: 1.4vmax; color: grey; text-align:"><br/><br/><br/><br/></font>
+						</div>
+					</div>
+				</div>
 			</div>
 			<div id="MiddleBar" style="width: 100%; height: 88%; overflow: hidden;position: relative; z-index: 2;display: inline-block; background: hsla(0, 0%, 92%, 1);">
 				<div id="VS3" style="width: 2%; height: 100%; overflow: hidden;position: relative; z-index: 1;display: inline-block;"></div>
@@ -978,9 +1177,9 @@
 				</div>
 				<div id="VS4" style="width: 2%; height: 100%; overflow: hidden;position: relative; z-index: 1;display: inline-block;"></div>
 			</div>
-			<div id="BottomBar" style="width: 100%; height: 6%; overflow: hidden;position: relative; z-index: 2;display: inline-block;">
-				<div id="disclaimerBox" style="width: 100%; height: 100%; overflow: hidden;position: relative; z-index: 1;display: inline-flex; align-items: center; justify-content: center; font-size: 1vmax;">
-					<div id="disclaimerText" style="width: 90%; height: 100%; overflow: hidden;position: relative; z-index: 1;font-family: Source Sans Pro; font-size: 1vmax; text-align: center;">
+			<div id="BottomBar" style="width: 100%; height: 6%; overflow: hidden;position: relative; z-index: 2;display: inline-block; background: hsla(0, 0%, 92%, 1);">
+				<div id="disclaimerBox" style="width: 100%; height: 100%; overflow: hidden;position: relative; z-index: 3;display: inline-flex; align-items: center; justify-content: center; font-size: 1vmax;">
+					<div id="disclaimerText" style="width: 90%; height: 100%; overflow: hidden;position: relative; z-index: 3;font-family: Source Sans Pro; font-size: 1vmax; text-align: center;">
 					<div>
 						<font style="font-weight: bold; font-size: 1.1vmax;">Disclaimer</font><br/>
 						This tool uses an agent based model to simulate effect of different policies on virus spread. This
@@ -5403,7 +5602,7 @@
 			}
 		}
 
-		// r_defaultJSON = {a_false_negative_percent: 0.3, a_social_distancing_efficiency: 0.6, agent_density: 0.0001, c_contact_trace: 5, distribution_age_max: 90, distribution_age_min: 1, distribution_age_peak: 25, distribution_hygiene_mean: 0.6, distribution_hygiene_var: 1, essential_agent_percent: 0.05, experiment: "e93f772a-788c-4231-9b7d-7250b1ea5dfd", hospital_bed_per_agent: 0.101, icu_bed_per_hospital_bed: 0.055, infection_percent: 0.001, num_agents: 10000, recovery_percent: 0, strategy: {0: {a_lockdown_threshhold: 60, c_testing: 5, c_icu_beds: 0, c_hospital_bed: 0}, 3: {p_lockdown: 1}, 13: {p_lockdown: 0}, 15: {p_social_distancing: 1}, 20: {c_hospital_bed: 120}, 21: {c_hospital_bed: 0}, 30: {p_quarantine: 1, c_icu_beds: 120}, 31: {c_icu_beds: 0}, 39: {p_lockdown: 1}, 52: {p_daily_testing: 1}, 60: {c_icu_beds: 450}, 61: {c_icu_beds: 0}, 63: {c_testing: 40}, 70: {p_lockdown: 0}, 80: {c_hospital_bed: 338}, 81: {c_hospital_bed: 0}, 90: {p_age_lockdown: 1, c_testing: 70}, 95: {a_lockdown_threshhold: 50}, 100: {c_icu_beds: 180}, 101: {c_icu_beds: 0}, 110: {p_lockdown: 1}, 120: {p_quarantine: 0, a_lockdown_threshhold: 55, c_icu_beds: 45}, 121: {c_icu_beds: 0}, 140: {p_social_distancing: 0}, 142: {p_lockdown: 0}, 144: {p_age_lockdown: 0, c_hospital_bed: 223}, 145: {c_hospital_bed: 0}, 148: {p_daily_testing: 0}, 150: {p_exit: 1}}}
+		// r_defaultJSON = {a_false_negative_percent: 0.3, a_social_distancing_efficiency: 0.6, agent_density: 0.0001, c_contact_trace: 5, distribution_age_max: 90, distribution_age_min: 1, distribution_age_peak: 25, distribution_hygiene_mean: 0.6, distribution_hygiene_var: 1, essential_agent_percent: 0.05, experiment: "e93f772a-788c-4231-9b7d-7250b1ea5dfd", hospital_bed_per_agent: 0.101, icu_bed_per_hospital_bed: 0.055, infection_percent: 0.001, num_agents: 10000, recovery_percent: 0, strategy: {0: {a_lockdown_threshhold: 60, c_hospital_bed: 0, c_icu_beds: 0, c_testing: 5}, 24: {p_close_borders: 1}, 33: {p_contact_tracing: 1}, 54: {p_contact_tracing: 0}, 62: {p_close_borders: 0}, 74: {p_hospitalization: 1}, 80: {p_age_lockdown: 1}, 85: {p_close_borders: 1}, 89: {p_contact_tracing: 1}, 102: {p_hospitalization: 0}, 103: {p_age_lockdown: 0}, 112: {p_close_borders: 0}, 116: {p_contact_tracing: 0}, 127: {p_close_borders: 1}, 139: {p_contact_tracing: 1}, 146: {p_contact_tracing: 0}, 150: {p_exit: 1}}}
 
 		r_defaultJSON = {
 			distribution_hygiene_mean: 0.6,
@@ -5758,10 +5957,17 @@
 				document.getElementById('VideosBar').style.zIndex = 1;
 				document.getElementById('SimsBar').style.zIndex = 1;
 
+				document.getElementById('middleSection').style.visibility = 'visible'
+				document.getElementById('AboutBar').style.visibility = 'hidden'
+				document.getElementById('PublicationBar').style.visibility = 'hidden'
+				document.getElementById('TeamBar').style.visibility = 'hidden'
+				document.getElementById('VideosBar').style.visibility = 'hidden'
+				document.getElementById('SimsBar').style.visibility = 'hidden'
+
 				document.getElementById('aboutmenuH').style.borderBottom = "0px solid white";
 				document.getElementById('publicationmenuH').style.borderBottom = "0px solid white";
 				document.getElementById('teammenuH').style.borderBottom = "0px solid white"
-				document.getElementById('simsmenuH').style.borderBottom = "0px solid white";
+				// document.getElementById('simsmenuH').style.borderBottom = "0px solid white";
 				document.getElementById('videosmenuH').style.borderBottom = "0px solid white"
 			}
 			else if (event.target.id == 'aboutmenuH') {
@@ -5773,10 +5979,17 @@
 				document.getElementById('VideosBar').style.zIndex = 1;
 				document.getElementById('SimsBar').style.zIndex = 1;
 
+				document.getElementById('middleSection').style.visibility = 'hidden'
+				document.getElementById('AboutBar').style.visibility = 'visible'
+				document.getElementById('PublicationBar').style.visibility = 'hidden'
+				document.getElementById('TeamBar').style.visibility = 'hidden'
+				document.getElementById('VideosBar').style.visibility = 'hidden'
+				document.getElementById('SimsBar').style.visibility = 'hidden'
+
 				document.getElementById('labmenuH').style.borderBottom = "0px solid white";
 				document.getElementById('publicationmenuH').style.borderBottom = "0px solid white";
 				document.getElementById('teammenuH').style.borderBottom = "0px solid white"
-				document.getElementById('simsmenuH').style.borderBottom = "0px solid white";
+				// document.getElementById('simsmenuH').style.borderBottom = "0px solid white";
 				document.getElementById('videosmenuH').style.borderBottom = "0px solid white"
 			}
 			else if (event.target.id == 'publicationmenuH') {
@@ -5788,10 +6001,18 @@
 				document.getElementById('VideosBar').style.zIndex = 1;
 				document.getElementById('SimsBar').style.zIndex = 1;
 
+				document.getElementById('middleSection').style.visibility = 'hidden'
+				document.getElementById('AboutBar').style.visibility = 'hidden'
+				document.getElementById('PublicationBar').style.visibility = 'visible'
+				document.getElementById('TeamBar').style.visibility = 'hidden'
+				document.getElementById('VideosBar').style.visibility = 'hidden'
+				document.getElementById('SimsBar').style.visibility = 'hidden'
+
+
 				document.getElementById('labmenuH').style.borderBottom = "0px solid white";
 				document.getElementById('aboutmenuH').style.borderBottom = "0px solid white";
 				document.getElementById('teammenuH').style.borderBottom = "0px solid white";
-				document.getElementById('simsmenuH').style.borderBottom = "0px solid white";
+				// document.getElementById('simsmenuH').style.borderBottom = "0px solid white";
 				document.getElementById('videosmenuH').style.borderBottom = "0px solid white";
 			}
 			else if (event.target.id == 'teammenuH') {
@@ -5803,10 +6024,18 @@
 				document.getElementById('VideosBar').style.zIndex = 1;
 				document.getElementById('SimsBar').style.zIndex = 1;
 
+				document.getElementById('middleSection').style.visibility = 'hidden'
+				document.getElementById('AboutBar').style.visibility = 'hidden'
+				document.getElementById('PublicationBar').style.visibility = 'hidden'
+				document.getElementById('TeamBar').style.visibility = 'visible'
+				document.getElementById('VideosBar').style.visibility = 'hidden'
+				document.getElementById('SimsBar').style.visibility = 'hidden'
+
+
 				document.getElementById('labmenuH').style.borderBottom = "0px solid white";
 				document.getElementById('publicationmenuH').style.borderBottom = "0px solid white";
 				document.getElementById('aboutmenuH').style.borderBottom = "0px solid white";
-				document.getElementById('simsmenuH').style.borderBottom = "0px solid white";
+				// document.getElementById('simsmenuH').style.borderBottom = "0px solid white";
 				document.getElementById('videosmenuH').style.borderBottom = "0px solid white"
 			}
 			else if (event.target.id == 'videosmenuH') {
@@ -5818,27 +6047,21 @@
 				document.getElementById('TeamBar').style.zIndex = 1;
 				document.getElementById('SimsBar').style.zIndex = 1;
 
-				document.getElementById('labmenuH').style.borderBottom = "0px solid white";
-				document.getElementById('publicationmenuH').style.borderBottom = "0px solid white";
-				document.getElementById('aboutmenuH').style.borderBottom = "0px solid white";
-				document.getElementById('simsmenuH').style.borderBottom = "0px solid white";
-				document.getElementById('teammenuH').style.borderBottom = "0px solid white"
-			}
-			else if (event.target.id == 'simsmenuH') {
-				document.getElementById('middleSection').style.zIndex = 1;
-				document.getElementById('SimsBar').style.zIndex = 3;
-				document.getElementById('simsmenuH').style.borderBottom = "2px solid hsla(190, 100%, 50%, 1)";
-				document.getElementById('PublicationBar').style.zIndex = 1;
-				document.getElementById('AboutBar').style.zIndex = 1;
-				document.getElementById('VideosBar').style.zIndex = 1;
-				document.getElementById('TeamBar').style.zIndex = 1;
+				document.getElementById('middleSection').style.visibility = 'hidden'
+				document.getElementById('AboutBar').style.visibility = 'hidden'
+				document.getElementById('PublicationBar').style.visibility = 'hidden'
+				document.getElementById('TeamBar').style.visibility = 'hidden'
+				document.getElementById('VideosBar').style.visibility = 'visible'
+				document.getElementById('SimsBar').style.visibility = 'hidden'
+
 
 				document.getElementById('labmenuH').style.borderBottom = "0px solid white";
 				document.getElementById('publicationmenuH').style.borderBottom = "0px solid white";
 				document.getElementById('aboutmenuH').style.borderBottom = "0px solid white";
-				document.getElementById('teammenuH').style.borderBottom = "0px solid white";
-				document.getElementById('videosmenuH').style.borderBottom = "0px solid white"
+				// document.getElementById('simsmenuH').style.borderBottom = "0px solid white";
+				document.getElementById('teammenuH').style.borderBottom = "0px solid white"
 			}
+			
 		}
 
 
