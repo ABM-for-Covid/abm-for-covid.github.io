@@ -19,7 +19,7 @@ function listenForData(uid) {
     firebase.database().ref(`experiments/${uid}/res`).on('child_added', function (data) {
         // console.log('listenForData -> val', data.key, data.val())
         convertToFormatV1(data.val())
-        connectToPlotData(graphDataFromDB)
+        connectTodbtData(graphDataFromDB)
     })
 }
 

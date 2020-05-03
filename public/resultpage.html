@@ -5725,12 +5725,12 @@
 					}
 				}
 			}
-			connectToPlotData(dayWiseCSV)
+			connectTodbtData(dayWiseCSV)
 		}
 
 	}
 
-	function connectToPlotData(readData) {
+	function connectTodbtData(readData) {
 		for (var curveD in plotData) {
 			plotData[curveD] = readData[curveD];
 			if (document.getElementById(curveD).checked) {
