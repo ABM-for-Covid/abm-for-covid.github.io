@@ -4737,7 +4737,7 @@
     borderAddPT = true;
     pUid = 0;
 
-    function addDynaPPointSpecific(atValues, graphReferred) {
+    function raddDynaPPointSpecific(atValues, graphReferred) {
         pUid = pUid + 1;
         lineadded = addLine(graphReferred, 'sliderFill@' + pUid + '@' + graphReferred, {
             x1: atValues[0],
@@ -5778,7 +5778,7 @@
                         for (pointsRanges in sPGToUpdateData) {
                             if (sPGToUpdateData[pointsRanges].length == 2) {
                                 console.log("assigning value for ", sPGToUpdateData[pointsRanges], sPG)
-                                addDynaPPointSpecific(sPGToUpdateData[pointsRanges], sPG)
+                                raddDynaPPointSpecific(sPGToUpdateData[pointsRanges], sPG)
                             }
                         }
                     }
