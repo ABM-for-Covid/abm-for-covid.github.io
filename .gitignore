@@ -28,4 +28,3 @@ out/
 *.iml
 .firebase/
 functions/node_modules/
-team/
